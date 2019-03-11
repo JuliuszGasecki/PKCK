@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GamesCatalog>
+	<header>
+		<titleOfProject>Katalog gier</titleOfProject>
+		<description>Katalog zawierający najpopularniejsze gry ostatniej dekady!</description>
+		<authors>
+			<student>
+				<firstName>Juliusz</firstName>
+				<lastName>Gąsecki</lastName>
+				<index>210184</index>
+			</student>
+			<student>
+				<firstName>Bartosz</firstName>
+				<lastName>Stempień</lastName>
+				<index>210327</index>
+			</student>
+		</authors>
+		<modificationDate>11.03.2019</modificationDate>
+		<university>Politechnika Łódzka Wydział Fizyki Technicznej, Informatyki i Matematyki Stosowanej</university>
+	</header>
+	
+	<producers>
+		<producer producerId="BW">
+			<companyName>Bio Ware</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice>98,36</sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerId="CDP">
+			<companyName>CD Project Red</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerId="Bethesda">
+			<companyName>Bethesda Softworks</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerId="SE">
+			<companyName>Square Enix</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerId="Ubisof">
+			<companyName>Ubisof</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerId="Activision">
+			<companyName>Activision Inc.</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+	</producers>
+	<platforms>	
+		<platform platformId = "PC">PC</platform>
+		<platform platformId = "PS4">Play Station 4</platform>
+		<platform platformId = "XBOX">XBOX One</platform>
+		<platform platformId = "Multi">Multiplatformowe</platform>
+	</platforms>
+	<genres>
+		<genre genreId = "RPG">Role Playing Game </genre>
+		<genre genreId = "FPS">First Person Shooter </genre>
+		<genre genreId = "Stealth">Skradanka </genre>
+		<genre genreId = "RTS">Strategia czasu rzeczywistego </genre>
+		<genre genreId = "Action">Gra akcji </genre>
+	</genres>
+</GamesCatalog>
