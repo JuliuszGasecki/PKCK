@@ -1,12 +1,73 @@
 @charset "utf-8";
 
+ *:root{
+	 
+	--colorBG:#666699;
+	--colorFont: #ffffff;
+	--colorHeader: #47476b;
+	--colorGames: #52527a;
+	 
+	 
+ }
  GamesCatalog {
 	 
-	 display: block;
-	 background-color: #f35423;
-	 color: #ffffff
-	 font-family: sans-serif;
-	 font-size: 100%;
-	 padding: 5%;
+	display: block;
+	background-color: var(--colorBG);
+	color: var(--colorFont);
+	font-family: "Comic Sans MS";
+	font-size: 100%;
+	padding: 5%;
 	 
+ }
+ 
+ header{
+	 
+	display: block;
+	text-align: center;
+	background-color: var(--colorHeader);
+	padding: 5%; 
+ }
+ 
+ header > titleOfProject{
+	display: block;
+	font-size: 500%;
+	letter-spacing: 0.2em;
+ }
+ 
+ header > description{
+	display: block;
+	font-size: 200%;
+	letter-spacing: 0.1em;
+ }
+ 
+ header > authors, modificationDate{
+	display: block;
+	font-size: 100%;
+	letter-spacing: 0.1em;
+ }
+ 
+ header > authors > student:first-child::after {
+    content: " | ";
+}
+header > university{
+	display: block;
+	font-size: 100%;
+	letter-spacing: 0.1em;
+	font-style: bold;
+}
+ 
+ 
+games game{
+	
+	display: grid;
+	grid-gap: auto;
+	background-color: var(--colorGames);
+	text-align: center;
+	overflow: auto;
+	padding: 3%
+}
+
+ 
+ producers, gameEngines, publishers, Ratings, platforms, genres {
+	display: none;
  }
