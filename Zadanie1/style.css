@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+ GamesCatalog {
+	 
+	 display: block;
+	 background-color: #f35423;
+	 color: #ffffff
+	 font-family: sans-serif;
+	 font-size: 100%;
+	 padding: 5%;
+	 
+ }

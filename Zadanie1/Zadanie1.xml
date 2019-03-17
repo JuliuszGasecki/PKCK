@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
 <GamesCatalog>
 	<header>
 		<titleOfProject>Katalog gier</titleOfProject>
@@ -20,54 +21,285 @@
 	</header>
 	
 	<producers>
-		<producer producerId="BW">
-			<companyName>Bio Ware</companyName>
+		<producer producerID="BW">
+			<companyName>BioWare</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice>98,36</sharePrice>
+			<sharePrice currency="USD">98,36 </sharePrice>
 			<headquarters></headquarters>	
 		</producer>
-		<producer producerId="CDP">
+		<producer producerID="CDP">
 			<companyName>CD Project Red</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice></sharePrice>
+			<sharePrice currency="USD"></sharePrice>
 			<headquarters></headquarters>	
 		</producer>
-		<producer producerId="Bethesda">
+		<producer producerID="Bethesda">
 			<companyName>Bethesda Softworks</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice></sharePrice>
+			<sharePrice currency="USD"></sharePrice>
 			<headquarters></headquarters>	
 		</producer>
-		<producer producerId="SE">
-			<companyName>Square Enix</companyName>
+		<producer producerID="CD">
+			<companyName>Crystal Dynamics</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice></sharePrice>
+			<sharePrice currency="USD"></sharePrice>
 			<headquarters></headquarters>	
 		</producer>
-		<producer producerId="Ubisof">
+		<producer producerID="Ubisof">
 			<companyName>Ubisof</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice></sharePrice>
+			<sharePrice currency="USD"></sharePrice>
 			<headquarters></headquarters>	
 		</producer>
-		<producer producerId="Activision">
+		<producer producerID="Activision">
 			<companyName>Activision Inc.</companyName>
 			<foundationDate></foundationDate>
-			<sharePrice></sharePrice>
+			<sharePrice currency="USD"></sharePrice>
+			<headquarters></headquarters>	
+		</producer>
+		<producer producerID="Dice">
+			<companyName>EA Digital Illusions Creative Entertainment</companyName>
+			<foundationDate></foundationDate>
+			<sharePrice currency="USD"></sharePrice>
 			<headquarters></headquarters>	
 		</producer>
 	</producers>
+	
+	<gameEngines>
+		<engine engineID = "Frostbite" programmingLanguage = "C++">
+			<name>Frostbite</name>
+			<company>EA Dice</company>
+		</engine>
+		
+		<engine engineID = "FEngine" programmingLanguage = "C++">
+			<name>Foundation engine</name>
+			<company>Crystal Dynamics</company>
+		</engine>
+		
+		<engine engineID = "EclipseEngine" programmingLanguage = "C++">
+			<name>Eclipse engine</name>
+			<company>EclipseOrigins</company>
+		</engine>
+		<engine engineID = "Unreal" programmingLanguage = "C++">
+			<name>Unreal engine</name>
+			<company>Epic Games</company>
+		</engine>
+	</gameEngines>
+	
+	<publishers>
+		<publisher publisherID = "EA">
+			<name>Electronic Arts</name>
+		</publisher>
+		<publisher publisherID = "SE">
+			<name>Square Enix</name>
+		</publisher>
+		<publisher publisherID = "">
+			<name>Square Enix</name>
+		</publisher>
+	</publishers>
+	
+	<Ratings>
+		<Rating ratingID = "A">Adults Only</Rating>
+		<Rating ratingID = "M">Mature</Rating>
+		<Rating ratingID = "T">Teen</Rating>
+		<Rating ratingID = "E">Everyone</Rating>
+		<Rating ratingID = "EC">Early Childhood</Rating>
+	</Ratings>
+	
 	<platforms>	
-		<platform platformId = "PC">PC</platform>
-		<platform platformId = "PS4">Play Station 4</platform>
-		<platform platformId = "XBOX">XBOX One</platform>
-		<platform platformId = "Multi">Multiplatformowe</platform>
+		<platform platformID = "PC">PC</platform>
+		<platform platformID = "PS4">Play Station 4</platform>
+		<platform platformID = "XBOX">XBOX One</platform>
+		<platform platformID = "Multi">Multiplatformowe</platform>
 	</platforms>
 	<genres>
-		<genre genreId = "RPG">Role Playing Game </genre>
-		<genre genreId = "FPS">First Person Shooter </genre>
-		<genre genreId = "Stealth">Skradanka </genre>
-		<genre genreId = "RTS">Strategia czasu rzeczywistego </genre>
-		<genre genreId = "Action">Gra akcji </genre>
+		<genre genreID = "RPG">Role Playing Game </genre>
+		<genre genreID = "FPS">First Person Shooter </genre>
+		<genre genreID = "Stealth">Skradanka </genre>
+		<genre genreID = "RTS">Strategia czasu rzeczywistego </genre>
+		<genre genreID = "Action">Gra akcji </genre>
 	</genres>
+	<games>
+		<game producerId = "Dice" engineId = "Frostbite" publisherId = "EA" ratingID = "M" platformID = "Multi" genreID="FPS">
+			<title>Battlefield 5</title>
+			<description> Enter mankind's greatest conflict with Battlefield 5 as the series goes back to its roots with a never-before-seen portrayal of World War 2. Lead your squad to victory with new ways to turn the battlefield to your advantage. Assemble your Company of customized soldiers, weapons, and vehicles then take them on an epic journey through the Tides of War. Experience the most intense, immersive Battlefield yet. You will never be the same.</description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>15-11-2018</premierDate>
+			<metariticRate>
+				<metascore>81</metascore>
+				<userScore>2.8</userScore>
+				<numberOfVotes>2269</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/battlefield5.jpg"/>
+		</game>
+		
+		<game producerId = "CD" engineId = "Frostbite" publisherId = "SE" ratingID = "M" platformID = "Multi" genreID="Action">
+			<title>Shadow of the Tomb Raider</title>
+			<description>Experience Lara Croft's defining moment as she becomes the Tomb Raider. In Shadow of the Tomb Raider, Lara must master a deadly jungle, overcome terrifying tombs, and persevere through her darkest hour. As she races to save the world from a Maya apocalypse, Lara will ultimately be forged into the Tomb Raider she is destined to be. </description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>14-10-2018</premierDate>
+			<metariticRate>
+				<metascore>77</metascore>
+				<userScore>6.9</userScore>
+				<numberOfVotes>460</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/tombRider.jpg"/>
+		</game>
+		
+		<game producerId = "CD" engineId = "Frostbite" publisherId = "SE" ratingID = "M" platformID = "Multi" genreID="Action">
+			<title>Shadow of the Tomb Raider</title>
+			<description>Experience Lara Croft's defining moment as she becomes the Tomb Raider. In Shadow of the Tomb Raider, Lara must master a deadly jungle, overcome terrifying tombs, and persevere through her darkest hour. As she races to save the world from a Maya apocalypse, Lara will ultimately be forged into the Tomb Raider she is destined to be. </description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>14-10-2018</premierDate>
+			<metariticRate>
+				<metascore>77</metascore>
+				<userScore>6.9</userScore>
+				<numberOfVotes>460</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/tombRider.jpg"/>
+		</game>
+		
+		<game producerId = "BW" engineId = "EclipseEngine" publisherId = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>Dragon Age Origins</title>
+			<description>Dragon Age: Origins is a role-playing game developed by BioWare and published by Electronic Arts. ... BioWare described Dragon Age: Origins as a "dark heroic fantasy" set in a unique world, and a spiritual successor to their previous Baldur's Gate and Neverwinter Nights franchises.</description>
+			<premierPrice currency = "PLN">139.90</premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore>91</metascore>
+				<userScore>8.7</userScore>
+				<numberOfVotes>3978</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "BW" engineId = "Unreal" publisherId = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>Mass Effect</title>
+			<description>Mass Effect is a science-fiction action-role-playing third-person-shooter video-game series developed by the Canadian company BioWare and released for the Xbox 360, PlayStation 3, and Microsoft Windows, with the third instalment also released on the Wii U.</description>
+			<premierPrice currency = "PLN">129.90</premierPrice>
+			<premierDate>28-05-2008</premierDate>
+			<metariticRate>
+				<metascore>89</metascore>
+				<userScore>8.6</userScore>
+				<numberOfVotes>2999</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/mass.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+		
+		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
+			<title></title>
+			<description></description>
+			<premierPrice currency = "PLN"></premierPrice>
+			<premierDate>3-11-2007</premierDate>
+			<metariticRate>
+				<metascore></metascore>
+				<userScore></userScore>
+				<numberOfVotes></numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
+		</game>
+	</games>
 </GamesCatalog>
