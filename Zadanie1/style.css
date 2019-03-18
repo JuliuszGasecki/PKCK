@@ -6,6 +6,9 @@
 	--colorFont: #ffffff;
 	--colorHeader: #47476b;
 	--colorGames: #52527a;
+	--colorHover: #33334d;
+	--colorImageBorder: #c7b8c0;
+	--colorFunnyLol: #c7b8c0;
 	 
 	 
  }
@@ -15,6 +18,7 @@
 	background-color: var(--colorBG);
 	color: var(--colorFont);
 	font-family: "Comic Sans MS";
+	/*font-family: "Arial";*/
 	font-size: 100%;
 	padding: 5%;
 	 
@@ -55,19 +59,114 @@ header > university{
 	letter-spacing: 0.1em;
 	font-style: bold;
 }
- 
+
  
 games game{
 	
 	display: grid;
 	grid-gap: auto;
+	grid-template-columns: 30% 70%;
+	grid-template-rows: auto auto auto auto auto;
 	background-color: var(--colorGames);
 	text-align: center;
 	overflow: auto;
-	padding: 3%
+	padding: 4%;
+	
 }
 
- 
+games game:hover{
+	background-color: var(--colorHover);
+	
+}
+
+games game > cover{
+	
+	display: block;
+	text-align: center;
+	border: 5px solid var(--colorImageBorder);
+	height: 500px;
+	width: 333px;
+	grid-column: 1;
+	grid-row: 1 / span 5;
+}
+
+games game > title{
+	display: block;
+	font-style: bold;
+	font-size: 400%;
+	grid-column: 2;
+	grid-row: 1;
+}
+
+games game > description{
+	display: block;
+	font-size: 150%;
+}
+
+games game > premierPrice::before{
+	color: var(--colorFunnyLol);
+	content:"Cana premierowa :";
+}
+
+games game > premierPrice{
+	display: block;
+	grid-column: 2;
+	grid-row: 3;
+}
+
+games game > premierDate::before{
+	color: var(--colorFunnyLol);
+	content:"Data premiery:";
+}
+
+games game > premierDate{
+	display: block;
+	grid-column: 2;
+	grid-row: 4;
+}
+
+metariticRate > metascore::before{
+	color: var(--colorFunnyLol);
+	content:"Ocena krytyków:";
+}
+
+metariticRate > userScore::before{
+	color: var(--colorFunnyLol);
+	content:"Ocena użytkowników:";
+}
+
+metariticRate > numberOfVotes::before{
+	color: var(--colorFunnyLol);
+	content:"Liczba ocen :";
+}
+
+
+games game > metariticRate{
+	display: grid;
+	grid-gap: auto;
+	grid-column: 2;
+	grid-row: 5;
+	
+}
+metariticRate >metascore{
+	display: block;
+}
+metariticRate > userScore{
+	display: block;
+}
+metariticRate > numberOfVotes {
+	display: block;
+}
  producers, gameEngines, publishers, Ratings, platforms, genres {
 	display: none;
  }
+ 
+ 
+ games game > cover[src="covers/battlefield5.jpg"] { content: url("covers/battlefield5.jpg"); }
+ games game > cover[src="covers/tombRider.jpg"] { content: url("covers/tombRider.jpg"); }
+ games game > cover[src="covers/mass.jpg"] { content: url("covers/mass.jpg"); }
+ games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
+ games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
+ games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
+ games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
+ games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }

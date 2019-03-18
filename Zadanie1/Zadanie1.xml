@@ -146,19 +146,6 @@
 			<cover src = "covers/tombRider.jpg"/>
 		</game>
 		
-		<game producerId = "CD" engineId = "Frostbite" publisherId = "SE" ratingID = "M" platformID = "Multi" genreID="Action">
-			<title>Shadow of the Tomb Raider</title>
-			<description>Experience Lara Croft's defining moment as she becomes the Tomb Raider. In Shadow of the Tomb Raider, Lara must master a deadly jungle, overcome terrifying tombs, and persevere through her darkest hour. As she races to save the world from a Maya apocalypse, Lara will ultimately be forged into the Tomb Raider she is destined to be. </description>
-			<premierPrice currency = "PLN">249.90</premierPrice>
-			<premierDate>14-10-2018</premierDate>
-			<metariticRate>
-				<metascore>77</metascore>
-				<userScore>6.9</userScore>
-				<numberOfVotes>460</numberOfVotes>
-			</metariticRate>		
-			<cover src = "covers/tombRider.jpg"/>
-		</game>
-		
 		<game producerId = "BW" engineId = "EclipseEngine" publisherId = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
 			<title>Dragon Age Origins</title>
 			<description>Dragon Age: Origins is a role-playing game developed by BioWare and published by Electronic Arts. ... BioWare described Dragon Age: Origins as a "dark heroic fantasy" set in a unique world, and a spiritual successor to their previous Baldur's Gate and Neverwinter Nights franchises.</description>
@@ -186,8 +173,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -199,8 +186,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -212,8 +199,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -225,8 +212,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -238,8 +225,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -251,8 +238,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -264,8 +251,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -277,8 +264,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
@@ -290,8 +277,8 @@
 		</game>
 		
 		<game producerId = "" engineId = "" publisherId = "" ratingID = "" platformID = "" genreID="">
-			<title></title>
-			<description></description>
+			<title>Placeholder</title>
+			<description>Placeholder</description>
 			<premierPrice currency = "PLN"></premierPrice>
 			<premierDate>3-11-2007</premierDate>
 			<metariticRate>
