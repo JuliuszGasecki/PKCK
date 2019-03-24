@@ -57,9 +57,9 @@
 			producerID IDREF #REQUIRED
 			engineID IDREF #REQUIRED
 			publisherID IDREF #REQUIRED
-			ratingID IDREF #REQUIRED
-			platformID IDREF #REQUIRED
-			genreID IDREF #REQUIRED>
+			ratingID (A|M|T|E|EC) #REQUIRED
+			platformID (PC|PS4|XBOX|Multi) #REQUIRED
+			genreID (RPG|FPS|Stealth|RTS|Action) #REQUIRED>
 			<!ELEMENT title (#PCDATA)>
 			<!ELEMENT description (#PCDATA)>
 			<!ELEMENT premierPrice (#PCDATA)>
@@ -70,6 +70,7 @@
 				<!ELEMENT metascore (#PCDATA)>
 				<!ELEMENT userScore (#PCDATA)>
 				<!ELEMENT numberOfVotes (#PCDATA)>
+				<!ELEMENT cover EMPTY>
 				<!ATTLIST cover 
 					src CDATA #REQUIRED>
 			
