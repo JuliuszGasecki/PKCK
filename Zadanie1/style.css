@@ -79,6 +79,26 @@ games game:hover{
 	
 }
 
+game::after{
+	color: var(--colorFunnyLol);
+	display:block;
+	content:"Age rating: " attr(ratingID)  ;
+}
+
+game::before{
+	color: var(--colorFunnyLol);
+	display:block;
+}
+games game[producerID="BW"]::before     { content: "BioWare"; }
+games game[producerID="CDP"]::before     { content: "CD Project Red"; }
+games game[producerID="Bethesda"]::before     { content: "Bethesda Softworks"; }
+games game[producerID="CD"]::before     { content: "Crystal Dynamics"; }
+games game[producerID="Ubisoft"]::before     { content: "Ubisoft"; }
+games game[producerID="Activision"]::before     { content: "Activision Inc."; }
+games game[producerID="Dice"]::before     { content: "EA Digital Illusions Creative Entertainment."; }
+games game[producerID="Insomniac"]::before     { content: "Insomniac Games."; }
+games game[producerID="Maxis"]::before     { content: "Maxis Games."; }
+
 games game > cover{
 	
 	display: block;
@@ -102,44 +122,47 @@ games game > description{
 	display: block;
 	font-size: 150%;
 	grid-column: 2;
-	grid-row: 5;
+	grid-row: 4;
 }
 
 games game > premierPrice::before{
 	color: var(--colorFunnyLol);
-	content:"Cana premierowa :";
+	content:"Price :";
 }
 
 games game > premierPrice{
 	display: block;
 	grid-column: 2;
-	grid-row: 6;
+	grid-row: 5;
+}
+premierPrice::after{
+	content: " " attr(currency);
 }
 
 games game > premierDate::before{
 	color: var(--colorFunnyLol);
-	content:"Data premiery:";
+	content:"Release date:";
 }
 
 games game > premierDate{
 	display: block;
 	grid-column: 2;
-	grid-row: 7;
+	grid-row: 6;
 }
 
 metariticRate > metascore::before{
 	color: var(--colorFunnyLol);
-	content:"Ocena krytyków:";
+	content:"Metascore:";
 }
 
 metariticRate > userScore::before{
 	color: var(--colorFunnyLol);
-	content:"Ocena użytkowników:";
+	content:"User score:";
 }
 
 metariticRate > numberOfVotes::before{
 	color: var(--colorFunnyLol);
-	content:"Liczba ocen :";
+	content:"Votes :";
 }
 
 
@@ -147,7 +170,7 @@ games game > metariticRate{
 	display: grid;
 	grid-gap: auto;
 	grid-column: 2;
-	grid-row: 8;
+	grid-row: 7;
 	
 }
 metariticRate >metascore{
@@ -160,38 +183,20 @@ metariticRate > numberOfVotes {
 	display: block;
 }
 
-games game:before{
-	color: var(--colorFunnyLol);
-	grid-column: 2 / span 1;
-	grid-row: 2 / span 1;
-}
-
-games game[producerID="BW"]::before     { content: "BioWare"; }
-games game[producerID="CDP"]::before     { content: "CD Project Red"; }
-games game[producerID="Bethesda"]::before     { content: "Bethesda Softworks"; }
-games game[producerID="CD"]::before     { content: "Crystal Dynamics"; }
-games game[producerID="Ubisof"]::before     { content: "Ubisof"; }
-games game[producerID="Activision"]::before     { content: "Activision Inc."; }
-games game[producerID="Dice"]::before     { content: "EA Digital Illusions Creative Entertainment."; }
-
-description:after{
-	color: var(--colorFunnyLol);
-	display:block;
-	grid-column: 2 / span 1;
-	grid-row: 3 / span 1;
-	content: attr(platformID);
-}
-
  producers, gameEngines, publishers, Ratings, platforms, genres {
 	display: none;
  }
- 
- 
+
  games game > cover[src="covers/battlefield5.jpg"] { content: url("covers/battlefield5.jpg"); }
  games game > cover[src="covers/tombRider.jpg"] { content: url("covers/tombRider.jpg"); }
  games game > cover[src="covers/mass.jpg"] { content: url("covers/mass.jpg"); }
  games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
- games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
- games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
- games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
- games game > cover[src="covers/dao.jpg"] { content: url("covers/dao.jpg"); }
+ games game > cover[src="covers/inkw.jpg"] { content: url("covers/inkw.jpg"); }
+ games game > cover[src="covers/Skyrim.jpg"] { content: url("covers/Skyrim.jpg"); }
+ games game > cover[src="covers/odys.jpg"] { content: url("covers/odys.jpg"); }
+ games game > cover[src="covers/ratch.jpg"] { content: url("covers/ratch.jpg"); }
+ games game > cover[src="covers/w2.jpg"] { content: url("covers/w2.jpg"); }
+ games game > cover[src="covers/w3.jpg"] { content: url("covers/w3.jpg"); }
+ games game > cover[src="covers/cod.jpg"] { content: url("covers/cod.jpg"); }
+ games game > cover[src="covers/spore.jpg"] { content: url("covers/spore.jpg"); }
+ games game > cover[src="covers/tom.jpg"] { content: url("covers/tom.jpg"); }

@@ -1,6 +1,7 @@
 <!ELEMENT GamesCatalog (header,producers,gameEngines,publishers,Ratings,platforms,genres,games)>
 
-	<!ELEMENT header (titleOfProject,description,authors,modificationDate,university)>
+	<!ELEMENT header (polskieZnakiŹŻ,titleOfProject,description,authors,modificationDate,university)>
+		<!ELEMENT polskieZnakiŹŻ EMPTY>
 		<!ELEMENT titleOfProject (#PCDATA)>
 		<!ELEMENT description (#PCDATA)>
 		<!ELEMENT authors (student+)>
@@ -73,9 +74,3 @@
 				<!ELEMENT cover EMPTY>
 				<!ATTLIST cover 
 					src CDATA #REQUIRED>
-			
-			
-				
-			
-			
-	
