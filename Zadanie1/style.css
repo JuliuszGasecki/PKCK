@@ -17,8 +17,8 @@
 	display: block;
 	background-color: var(--colorBG);
 	color: var(--colorFont);
-	font-family: "Comic Sans MS";
-	/*font-family: "Arial";*/
+	/*font-family: "Comic Sans MS";*/
+	font-family: "Arial";
 	font-size: 100%;
 	padding: 5%;
 	 
@@ -66,11 +66,11 @@ games game{
 	display: grid;
 	grid-gap: auto;
 	grid-template-columns: 30% 70%;
-	grid-template-rows: auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto auto;
 	background-color: var(--colorGames);
 	text-align: center;
 	overflow: auto;
-	padding: 4%;
+	padding: 2%;
 	
 }
 
@@ -101,6 +101,8 @@ games game > title{
 games game > description{
 	display: block;
 	font-size: 150%;
+	grid-column: 2;
+	grid-row: 5;
 }
 
 games game > premierPrice::before{
@@ -111,7 +113,7 @@ games game > premierPrice::before{
 games game > premierPrice{
 	display: block;
 	grid-column: 2;
-	grid-row: 3;
+	grid-row: 6;
 }
 
 games game > premierDate::before{
@@ -122,7 +124,7 @@ games game > premierDate::before{
 games game > premierDate{
 	display: block;
 	grid-column: 2;
-	grid-row: 4;
+	grid-row: 7;
 }
 
 metariticRate > metascore::before{
@@ -145,7 +147,7 @@ games game > metariticRate{
 	display: grid;
 	grid-gap: auto;
 	grid-column: 2;
-	grid-row: 5;
+	grid-row: 8;
 	
 }
 metariticRate >metascore{
@@ -157,6 +159,29 @@ metariticRate > userScore{
 metariticRate > numberOfVotes {
 	display: block;
 }
+
+games game:before{
+	color: var(--colorFunnyLol);
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1;
+}
+
+games game[producerID="BW"]::before     { content: "BioWare"; }
+games game[producerID="CDP"]::before     { content: "CD Project Red"; }
+games game[producerID="Bethesda"]::before     { content: "Bethesda Softworks"; }
+games game[producerID="CD"]::before     { content: "Crystal Dynamics"; }
+games game[producerID="Ubisof"]::before     { content: "Ubisof"; }
+games game[producerID="Activision"]::before     { content: "Activision Inc."; }
+games game[producerID="Dice"]::before     { content: "EA Digital Illusions Creative Entertainment."; }
+
+description:after{
+	color: var(--colorFunnyLol);
+	display:block;
+	grid-column: 2 / span 1;
+	grid-row: 3 / span 1;
+	content: attr(platformID);
+}
+
  producers, gameEngines, publishers, Ratings, platforms, genres {
 	display: none;
  }

@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<!DOCTYPE GamesCatalog SYSTEM "Zadanie1.dtd">
+<!DOCTYPE GamesCatalog [
+<!ELEMENT GamesCatalog (header,producers,gameEngines,publishers,Ratings,platforms,genres,games)>
+
+	<!ELEMENT header (titleOfProject,description,authors,modificationDate,university)>
+		<!ELEMENT titleOfProject (#PCDATA)>
+		<!ELEMENT description (#PCDATA)>
+		<!ELEMENT authors (student+)>
+			<!ELEMENT student (firstName,lastName,index)>
+				<!ELEMENT firstName (#PCDATA)>
+				<!ELEMENT lastName (#PCDATA)>
+				<!ELEMENT index (#PCDATA)>
+		<!ELEMENT modificationDate (#PCDATA)>
+		<!ELEMENT university (#PCDATA)>
+		
+	<!ELEMENT producers (producer+)>
+		<!ELEMENT producer (companyName,foundationDate,sharePrice,headquarters)>
+		<!ATTLIST producer 
+			producerID ID #REQUIRED>
+			<!ELEMENT companyName (#PCDATA)>
+			<!ELEMENT foundationDate (#PCDATA)>
+			<!ELEMENT sharePrice (#PCDATA)>
+			<!ATTLIST sharePrice 
+				currency  (USD|PLN|EURO) "USD">
+			<!ELEMENT headquarters (#PCDATA)>
+			
+	<!ELEMENT gameEngines (engine+)>
+		<!ELEMENT engine (name,company)>
+		<!ATTLIST engine
+			engineID ID #REQUIRED
+			programmingLanguage CDATA #IMPLIED>
+			<!ELEMENT name (#PCDATA)>
+			<!ELEMENT company (#PCDATA)>
+			
+	<!ELEMENT publishers (publisher+)>
+			<!ELEMENT publisher (publisherName)>
+			<!ATTLIST publisher 
+				publisherID ID #REQUIRED>
+				<!ELEMENT publisherName (#PCDATA)>
+				
+	<!ELEMENT Ratings (Rating+)>
+		<!ELEMENT Rating (#PCDATA)>
+		<!ATTLIST Rating 
+			ratingID (A|M|T|E|EC) #REQUIRED>
+			
+	<!ELEMENT platforms (platform+)>
+		<!ELEMENT platform (#PCDATA)>
+		<!ATTLIST platform 
+			platformID (PC|PS4|XBOX|Multi) #REQUIRED>
+			
+	<!ELEMENT genres (genre+)>
+		<!ELEMENT genre (#PCDATA)>
+		<!ATTLIST genre 
+			genreID (RPG|FPS|Stealth|RTS|Action) #REQUIRED>
+			
+	<!ELEMENT games (game*)>
+		<!ELEMENT game (title,description,premierPrice,premierDate,metariticRate,cover)>
+		<!ATTLIST game
+			producerID IDREF #REQUIRED
+			engineID IDREF #REQUIRED
+			publisherID IDREF #REQUIRED
+			ratingID IDREF #REQUIRED
+			platformID IDREF #REQUIRED
+			genreID IDREF #REQUIRED>
+			<!ELEMENT title (#PCDATA)>
+			<!ELEMENT description (#PCDATA)>
+			<!ELEMENT premierPrice (#PCDATA)>
+				<!ATTLIST premierPrice
+					currency (USD|PLN|EURO) "USD">
+			<!ELEMENT premierDate (#PCDATA)>
+			<!ELEMENT metariticRate (metascore,userScore,numberOfVotes)>
+				<!ELEMENT metascore (#PCDATA)>
+				<!ELEMENT userScore (#PCDATA)>
+				<!ELEMENT numberOfVotes (#PCDATA)>
+				<!ATTLIST cover 
+					src CDATA #REQUIRED>
+]>
+
 <GamesCatalog>
 	<header>
 		<titleOfProject>Katalog gier</titleOfProject>
