@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<!DOCTYPE GamesCatalog SYSTEM "Zadanie1.dtd">
-<GamesCatalog>
 
+<GamesCatalog
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="urn:Test.Namespace"
+xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 	<header>
 		<polskieZnakiŹŻ/>
 		<titleOfProject>Games Catalog</titleOfProject>

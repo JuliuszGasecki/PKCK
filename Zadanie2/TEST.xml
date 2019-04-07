@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<GamesCatalog
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="urn:Test.Namespace"
+xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
+
+	<header>
+		<polskieZnakiŹŻ/>
+		<titleOfProject>Games Catalog</titleOfProject>
+		<description>The best games of the last 15 years!</description>
+		<authors>
+			<student>
+				<firstName>Juliusz</firstName>
+				<lastName>Gąsecki</lastName>
+				<index>210184</index>
+			</student>
+			<student>
+				<firstName>Bartosz</firstName>
+				<lastName>Stempień</lastName>
+				<index>210327</index>
+			</student>
+		</authors>
+		<modificationDate>17-03-2019</modificationDate>
+		<university>Politechnika Łódzka Wydział Fizyki Technicznej, Informatyki i Matematyki Stosowanej</university>
+	</header>
+	
+	<producers>
+		<producer producerID="BW">
+			<companyName>BioWare</companyName>
+			<foundationDate>1995</foundationDate>
+			<sharePrice currency="USD">98.36 </sharePrice>
+			<headquarters>Edmonton</headquarters>	
+		</producer>
+		<producer producerID="CDP">
+			<companyName>CD Project Red</companyName>
+			<foundationDate>1994</foundationDate>
+			<sharePrice currency="PLN">185.90</sharePrice>
+			<headquarters>Warszwa</headquarters>	
+		</producer>
+		<producer producerID="Bethesda">
+			<companyName>Bethesda Softworks</companyName>
+			<foundationDate>1986</foundationDate>
+			<sharePrice currency="USD">78.34</sharePrice>
+			<headquarters>Rockville</headquarters>	
+		</producer>
+		<producer producerID="CD">
+			<companyName>Crystal Dynamics</companyName>
+			<foundationDate>1992</foundationDate>
+			<sharePrice currency="USD">87.32</sharePrice>
+			<headquarters>Redwood City</headquarters>	
+		</producer>
+		<producer producerID="Ubisoft">
+			<companyName>Ubisof</companyName>
+			<foundationDate>1986</foundationDate>
+			<sharePrice currency="EURO">79.50</sharePrice>
+			<headquarters>Montreuil</headquarters>	
+		</producer>
+		<producer producerID="Activision">
+			<companyName>Activision Inc.</companyName>
+			<foundationDate>1979</foundationDate>
+			<sharePrice currency="USD">87.90</sharePrice>
+			<headquarters>Santa Monica</headquarters>	
+		</producer>
+		<producer producerID="Dice">
+			<companyName>EA Digital Illusions Creative Entertainment</companyName>
+			<foundationDate>1992</foundationDate>
+			<sharePrice currency="USD">97.54</sharePrice>
+			<headquarters>Stockholm</headquarters>	
+		</producer>		
+		<producer producerID="Insomniac">
+			<companyName>Insomniac Games</companyName>
+			<foundationDate>1994</foundationDate>
+			<sharePrice currency="USD">69.84</sharePrice>
+			<headquarters>Burbank</headquarters>	
+		</producer>		
+		<producer producerID="Maxis">
+			<companyName>Maxis Games</companyName>
+			<foundationDate>1987</foundationDate>
+			<sharePrice currency="USD">56.90</sharePrice>
+			<headquarters>Redwood Shores</headquarters>	
+		</producer>
+	</producers>
+	
+	<gameEngines>
+		<engine engineID = "Frostbite" programmingLanguage = "C++">
+			<name>Frostbite</name>
+			<company>EA Dice</company>
+		</engine>
+		
+		<engine engineID = "FEngine" programmingLanguage = "C++">
+			<name>Foundation engine</name>
+			<company>Crystal Dynamics</company>
+		</engine>
+		
+		<engine engineID = "EclipseEngine" programmingLanguage = "C++">
+			<name>Eclipse engine</name>
+			<company>EclipseOrigins</company>
+		</engine>
+		<engine engineID = "Unreal" programmingLanguage = "C++">
+			<name>Unreal engine</name>
+			<company>Epic Games</company>
+		</engine>
+		<engine engineID = "CE" programmingLanguage = "C++">
+			<name>Creation Engine</name>
+			<company>Bethesda Games Studios</company>
+		</engine>
+		<engine engineID = "Anvil" programmingLanguage = "C++">
+			<name>Anvil</name>
+			<company>Ubisof</company>
+		</engine>		
+		<engine engineID = "REDengine" programmingLanguage = "C++">
+			<name>REDengine</name>
+			<company>CD Project Red</company>
+		</engine>
+	</gameEngines>
+	
+</GamesCatalog>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="urn:Test.Namespace"
+xmlns="urn:Test.Namespace"
+elementFormDefault="qualified">
+
+<!--
+ROOT
+ -->
+	<xs:element name="GamesCatalog">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="header"/>
+				<xs:element ref="producers"/>
+				<xs:element ref="gameEngines"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- HEADER -->
+	<xs:element name="header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="polskieZnakiŹŻ"/>
+				<xs:element name="titleOfProject" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element ref="authors"/>
+				<xs:element name="modificationDate">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+								<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="university" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  
+	<xs:element name="authors">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="2" ref="student"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstName" type="xs:string"/>
+				<xs:element name="lastName" type="xs:string"/>
+				<xs:element name="index">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- PRODUCERS -->
+	<xs:element name="producers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="producer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="producer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="companyName" type="xs:string"/>
+				<xs:element name="foundationDate">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:pattern value="[0-2][0-9][0-9][0-9]"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="sharePrice"/>	
+				<xs:element name="headquarters" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="producerID">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+							    <xs:whiteSpace value="collapse"/>
+								<xs:minLength value="2"/>
+								<xs:maxLength value="20"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+		</xs:complexType>
+	</xs:element>	
+	
+	
+	<xs:element name="sharePrice">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:decimal">
+					<xs:attribute name="currency" default="USD">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="USD"/>
+								<xs:enumeration value="PLN"/>
+								<xs:enumeration value="EURO"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+  
+
+	<!-- ENGINES -->
+	<xs:element name="gameEngines">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="engine"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="engine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="company" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="engineID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>						
+						<xs:minLength value="2"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+						<xs:attribute name="programmingLanguage">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>
+						<xs:minLength value="2"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>	
+  
+</xs:schema>
