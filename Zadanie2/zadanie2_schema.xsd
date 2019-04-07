@@ -1,371 +1,354 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="urn:Test.Namespace"
-xmlns="urn:Test.Namespace"
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:myType="http://www.example.org/typy"
+targetNamespace="http://www.example.org/typy"
 elementFormDefault="qualified">
 
 <!--
 ROOT
  -->
-	<xs:element name="GamesCatalog">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="header"/>
-				<xs:element ref="producers"/>
-				<xs:element ref="gameEngines"/>
-				<xs:element ref="publishers"/>
-				<xs:element ref="Ratings"/>
-				<xs:element ref="platforms"/>
-				<xs:element ref="genres"/>
-				<xs:element ref="games"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+	<xs:element name="GamesCatalog" type="myType:t_GamesCatalog">
 
-	<!-- HEADER -->
-	<xs:element name="header">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="polskieZnakiŹŻ"/>
-				<xs:element name="titleOfProject" type="xs:string"/>
-				<xs:element name="description" type="xs:string"/>
-				<xs:element ref="authors"/>
-				<xs:element name="modificationDate">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-								<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="university" type="xs:string"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-  
-	<xs:element name="authors">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="2" ref="student"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-  
-	<xs:element name="student">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="firstName" type="xs:string"/>
-				<xs:element name="lastName" type="xs:string"/>
-				<xs:element name="index">
-					<xs:simpleType>
-						<xs:restriction base="xs:integer">
-							<xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
-	<!-- PRODUCERS -->
-	<xs:element name="producers">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="producer"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	<xs:element name="producer">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="companyName" type="xs:string"/>
-				<xs:element name="foundationDate">
-					<xs:simpleType>
-						<xs:restriction base="xs:integer">
-							<xs:pattern value="[0-2][0-9][0-9][0-9]"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element ref="sharePrice"/>	
-				<xs:element name="headquarters" type="xs:string"/>
-			</xs:sequence>
-			<xs:attribute name="producerID">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="collapse"/>
-						<xs:minLength value="2"/>
-						<xs:maxLength value="20"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
 		<xs:key name="producer_key">
-			<xs:selector xpath="*/producer"/>
+			<xs:selector xpath="myType:t_producers/myType:t_producer"/>
 			<xs:field xpath="@producerID"/>
 		</xs:key>
-	</xs:element>	
-	
-	
-	<xs:element name="sharePrice">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:decimal">
-					<xs:attribute name="currency" default="USD">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="USD"/>
-								<xs:enumeration value="PLN"/>
-								<xs:enumeration value="EURO"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
-	</xs:element>
-  
+		<xs:keyref name="producerRefkey" refer="myType:producer_key">
+			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:field xpath="@producerID"/>
+		</xs:keyref>
 
-	<!-- ENGINES -->
-	<xs:element name="gameEngines">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="engine"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	<xs:element name="engine">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="name" type="xs:string"/>
-				<xs:element name="company" type="xs:string"/>
-			</xs:sequence>
-			<xs:attribute name="engineID" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="preserve"/>						
-						<xs:minLength value="2"/>
-						<xs:maxLength value="20"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attribute name="programmingLanguage" use="optional">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="preserve"/>
-						<xs:minLength value="2"/>
-						<xs:maxLength value="20"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
 		<xs:key name="engine_key">
-			<xs:selector xpath="*/engine"/>
+			<xs:selector xpath="myType:t_gameEngines/myType:t_engine"/>
 			<xs:field xpath="@engineID"/>
 		</xs:key>
-	</xs:element>	
+			<xs:keyref name="engineRefkey" refer="myType:engine_key">
+			<xs:selector xpath="t_games/myType:t_game"/>
+			<xs:field xpath="@engineID"/>
+		</xs:keyref>
 	
-		<!-- publishers -->
-	<xs:element name="publishers">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="publisher"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	
-	<xs:element name="publisher">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="publisherName" type="xs:string"/>
-			</xs:sequence>
-			<xs:attribute name="publisherID" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="preserve"/>
-						<xs:minLength value="2"/>
-						<xs:maxLength value="20"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-		</xs:complexType>
 		<xs:key name="publisher_key">
-			<xs:selector xpath="*/publisher"/>
+			<xs:selector xpath="myType:t_publisher/myType:t_publisher"/>
 			<xs:field xpath="@publisherID"/>
 		</xs:key>
-	</xs:element>
-	
-			<!-- RATINGS -->
-	<xs:element name="Ratings">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="Rating"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	<xs:element name="Rating">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:string">
-					<xs:attribute name="ratingID" use="required">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="A"/>
-								<xs:enumeration value="M"/>
-								<xs:enumeration value="T"/>
-								<xs:enumeration value="E"/>
-								<xs:enumeration value="EC"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
+		<xs:keyref name="publisherRefkey" refer="myType:publisher_key">
+			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:field xpath="@publisherID"/>
+		</xs:keyref>
+		
 		<xs:key name="Rating_key">
-			<xs:selector xpath="*/Rating"/>
-			<xs:field xpath="@ratingID"/>
+			<xs:selector xpath="myType:t_Ratings/myType:t_Rating"/>
+			<xs:field xpath="@RatingID"/>
 		</xs:key>
-	</xs:element>
-	
-			<!-- PLATFORMS -->
-	<xs:element name="platforms">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="platform"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	<xs:element name="platform">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:string">
-					<xs:attribute name="platformID" use="required">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="PC"/>
-								<xs:enumeration value="PS4"/>
-								<xs:enumeration value="XBOX"/>
-								<xs:enumeration value="Multi"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
+		<xs:keyref name="RatingRefkey" refer="myType:Rating_key">
+			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:field xpath="@RatingID"/>
+		</xs:keyref>
+		
 		<xs:key name="platform_key">
-			<xs:selector xpath="*/platform"/>
+			<xs:selector xpath="myType:t_platforms/myType:t_platform"/>
 			<xs:field xpath="@platformID"/>
 		</xs:key>
-	</xs:element>
-
-				<!-- GENRES -->
-	<xs:element name="genres">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="1" maxOccurs="unbounded" ref="genre"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	
-	<xs:element name="genre">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:string">
-					<xs:attribute name="genreID" use="required">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="RPG"/>
-								<xs:enumeration value="FPS"/>
-								<xs:enumeration value="Stealth"/>
-								<xs:enumeration value="RTS"/>
-								<xs:enumeration value="Action"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
+		<xs:keyref name="platformRefkey" refer="myType:platform_key">
+			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:field xpath="@platformID"/>
+		</xs:keyref>
+		
 		<xs:key name="genre_key">
-			<xs:selector xpath="*/genre"/>
+			<xs:selector xpath="myType:t_genres/myType:t_genre"/>
 			<xs:field xpath="@genreID"/>
 		</xs:key>
-	</xs:element>	
-  
-  	<!-- GAMES -->
-	<xs:element name="games">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element minOccurs="0" maxOccurs="unbounded" ref="game"/>
-			</xs:sequence>
-		</xs:complexType>
+		<xs:keyref name="genreRefkey" refer="myType:genre_key">
+			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:field xpath="@genreID"/>
+		</xs:keyref>
 	</xs:element>
 	
-	<xs:element name="game">
-		<xs:complexType>
+	<xs:complexType name="t_GamesCatalog">
+		<xs:sequence>
+			<xs:element name="header" type="myType:t_header"/>
+			<xs:element name="producers" type="myType:t_producers"/>
+			<xs:element name="gameEngines" type="myType:t_gameEngines"/>
+			<xs:element name="publishers" type="myType:t_publishers"/>
+			<xs:element name="Ratings" type="myType:t_Ratings"/>
+			<xs:element name="platforms" type="myType:t_platforms"/>
+			<xs:element name="genres" type="myType:t_genres"/>
+			<xs:element name="games" type="myType:t_games"/>
+		</xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="t_header">
+		<xs:sequence>
+			<xs:element name="polskieZnakiŹŻ"/>
+			<xs:element name="titleOfProject" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="authors" type="myType:t_authors"/>
+			<xs:element name="modificationDate" type="myType:t_modificationDate"/>
+			<xs:element name="university" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name = "t_modificationDate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="t_authors">
+		<xs:sequence>
+			<xs:element name="student" minOccurs="1" maxOccurs="2" type="myType:t_student"/>
+		</xs:sequence>
+	</xs:complexType>
+  
+	<xs:complexType name="t_student">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string"/>
+			<xs:element name="lastName" type="xs:string"/>
+			<xs:element name="index" type="myType:t_index"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="t_index">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType> 
+	
+	<xs:complexType name="t_producers">
 			<xs:sequence>
-				<xs:element name="title" type="xs:string"/>
-				<xs:element name="description" type="xs:string"/>
-				<xs:element ref="premierPrice"/>
-				<xs:element name="premierDate">
+				<xs:element name="producer" minOccurs="1" maxOccurs="unbounded" type="myType:t_producer"/>
+			</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="t_producer">
+		<xs:sequence>
+			<xs:element name="companyName" type="xs:string"/>
+			<xs:element name="foundationDate" type="myType:t_foundationDate"/>
+			<xs:element name ="sharePrice" type="myType:t_sharePrice"/>	
+			<xs:element name="headquarters" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="producerID">
+			<xs:simpleType>
+				<xs:restriction base="xs:NCName">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="2"/>
+					<xs:maxLength value="20"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:simpleType name="t_foundationDate">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-2][0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="t_sharePrice">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currency" default="USD">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
+							<xs:enumeration value="USD"/>
+							<xs:enumeration value="PLN"/>
+							<xs:enumeration value="EURO"/>
 						</xs:restriction>
 					</xs:simpleType>
-				</xs:element>
-				<xs:element ref="metariticRate"/>
-				<xs:element name="cover">
-					<xs:complexType>
-						<xs:attribute name="src" use="required" type="xs:string"/>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>			
-	</xs:element>	
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  
+
+	<xs:complexType name="t_gameEngines">
+		<xs:sequence>
+			<xs:element name="engine" minOccurs="1" maxOccurs="unbounded" type="myType:t_engine"/>
+		</xs:sequence>
+	</xs:complexType>	
 	
-	<xs:element name="premierPrice">
-		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:decimal">
-					<xs:attribute name="currency" default="PLN">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-								<xs:enumeration value="USD"/>
-								<xs:enumeration value="PLN"/>
-								<xs:enumeration value="EURO"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
-				</xs:extension>
-			</xs:simpleContent>
-		</xs:complexType>
-	</xs:element>
+	<xs:complexType name="t_engine">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="company" type="xs:string"/>
+		</xs:sequence>
+			<xs:attribute name="engineID" use="required" type="xs:string"/>
+			<xs:attribute name="programmingLanguage" use="optional"  type="xs:string"/>
+	</xs:complexType>
 	
-	<xs:element name="metariticRate">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="metascore">
+	<xs:complexType name="t_publishers">
+		<xs:sequence>
+			<xs:element name="publisher" minOccurs="1" maxOccurs="unbounded" type="myType:t_publisher"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	
+	<xs:complexType name="t_publisher">
+		<xs:sequence>
+			<xs:element name="publisherName" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="publisherID" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NCName">
+					<xs:whiteSpace value="preserve"/>
+					<xs:minLength value="2"/>
+					<xs:maxLength value="20"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="t_Ratings">
+		<xs:sequence>
+			<xs:element name="Rating" minOccurs="1" maxOccurs="unbounded" type="myType:t_Rating"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+
+	<xs:complexType name="t_Rating">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="ratingID" use="required">
 					<xs:simpleType>
-						<xs:restriction base="xs:integer">
-							<xs:minInclusive value="0"/>
-							<xs:maxInclusive value="100"/>
+						<xs:restriction base="xs:NCName">
+							<xs:enumeration value="A"/>
+							<xs:enumeration value="M"/>
+							<xs:enumeration value="T"/>
+							<xs:enumeration value="E"/>
+							<xs:enumeration value="EC"/>
 						</xs:restriction>
 					</xs:simpleType>
-				</xs:element>
-				<xs:element name="userScore">
-					<xs:simpleType>
-						<xs:restriction base="xs:decimal">
-							<xs:minInclusive value="0"/>
-							<xs:maxInclusive value="10"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="numberOfVotes" type="xs:integer"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	
+	<xs:complexType name="t_platforms">
+		<xs:sequence>
+			<xs:element name="platform" minOccurs="1" maxOccurs="unbounded" type="myType:t_platform"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="t_platform">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="platformID" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:NCName">
+							<xs:enumeration value="PC"/>
+							<xs:enumeration value="PS4"/>
+							<xs:enumeration value="XBOX"/>
+							<xs:enumeration value="Multi"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	
+	<xs:complexType name="t_genres">
+		<xs:sequence>
+			<xs:element name="genre" minOccurs="1" maxOccurs="unbounded" type="myType:t_genre"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="t_genre">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="genreID" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:NCName">
+							<xs:enumeration value="RPG"/>
+							<xs:enumeration value="FPS"/>
+							<xs:enumeration value="Stealth"/>
+							<xs:enumeration value="RTS"/>
+							<xs:enumeration value="Action"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>	
+ 
+	<xs:complexType name="t_games">
+		<xs:sequence>
+			<xs:element name="game" minOccurs="0" maxOccurs="unbounded" type="myType:t_game"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="t_game">
+		<xs:sequence>
+			 <xs:element name="title" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="premierPrice" type="myType:t_premierPrice"/>
+			<xs:element name="premierDate" type="myType:t_premierDate"/>
+			<xs:element name="metariticRate" type="myType:t_metariticRate"/>
+			<xs:element name="cover" type="myType:t_cover"/>
+		</xs:sequence>
+	<xs:attributeGroup ref="myType:gameAtrGroup"/>
+ 	</xs:complexType>
+	
+	<xs:attributeGroup name="gameAtrGroup">
+		<xs:attribute name="producerID" use="required" type="xs:string"/>
+		<xs:attribute name="engineID" use="required" type="xs:string"/>
+		<xs:attribute name="publisherID" use="required" type="xs:string"/>
+		<xs:attribute name="ratingID" use="required" type="xs:string"/>
+		<xs:attribute name="platformID" use="required" type="xs:string"/>
+		<xs:attribute name="genreID" use="required" type="xs:string"/>
+	</xs:attributeGroup>
+
+	<xs:complexType name="t_cover">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="src" type="xs:string" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="t_premierDate">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:complexType name="t_premierPrice">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currency" default="PLN">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="USD"/>
+							<xs:enumeration value="PLN"/>
+							<xs:enumeration value="EURO"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="t_metariticRate">
+		<xs:sequence>
+			<xs:element name="metascore" type ="myType:t_metascore"/>
+			<xs:element name="userScore" type="myType:t_userScore"/>
+			<xs:element name="numberOfVotes" type="xs:integer"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="t_metascore">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="t_userScore">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 </xs:schema>

@@ -3,8 +3,8 @@
 
 <GamesCatalog
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="urn:Test.Namespace"
-xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
+xmlns="http://www.example.org/typy"
+xsi:schemaLocation="http://www.example.org/typy zadanie2_schema.xsd">
 	<header>
 		<polskieZnakiŹŻ/>
 		<titleOfProject>Games Catalog</titleOfProject>
@@ -29,55 +29,55 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 		<producer producerID="BW">
 			<companyName>BioWare</companyName>
 			<foundationDate>1995</foundationDate>
-			<sharePrice currency="USD">98,36 </sharePrice>
+			<sharePrice currency="USD">98.36 </sharePrice>
 			<headquarters>Edmonton</headquarters>	
 		</producer>
 		<producer producerID="CDP">
 			<companyName>CD Project Red</companyName>
 			<foundationDate>1994</foundationDate>
-			<sharePrice currency="PLN">185,90</sharePrice>
+			<sharePrice currency="PLN">185.90</sharePrice>
 			<headquarters>Warszwa</headquarters>	
 		</producer>
 		<producer producerID="Bethesda">
 			<companyName>Bethesda Softworks</companyName>
 			<foundationDate>1986</foundationDate>
-			<sharePrice currency="USD">78,34</sharePrice>
+			<sharePrice currency="USD">78.34</sharePrice>
 			<headquarters>Rockville</headquarters>	
 		</producer>
 		<producer producerID="CD">
 			<companyName>Crystal Dynamics</companyName>
 			<foundationDate>1992</foundationDate>
-			<sharePrice currency="USD">87,32</sharePrice>
+			<sharePrice currency="USD">87.32</sharePrice>
 			<headquarters>Redwood City</headquarters>	
 		</producer>
 		<producer producerID="Ubisoft">
 			<companyName>Ubisof</companyName>
 			<foundationDate>1986</foundationDate>
-			<sharePrice currency="EURO">79,50</sharePrice>
+			<sharePrice currency="EURO">79.50</sharePrice>
 			<headquarters>Montreuil</headquarters>	
 		</producer>
 		<producer producerID="Activision">
 			<companyName>Activision Inc.</companyName>
 			<foundationDate>1979</foundationDate>
-			<sharePrice currency="USD">87,90</sharePrice>
+			<sharePrice currency="USD">87.90</sharePrice>
 			<headquarters>Santa Monica</headquarters>	
 		</producer>
 		<producer producerID="Dice">
 			<companyName>EA Digital Illusions Creative Entertainment</companyName>
 			<foundationDate>1992</foundationDate>
-			<sharePrice currency="USD">97,54</sharePrice>
+			<sharePrice currency="USD">97.54</sharePrice>
 			<headquarters>Stockholm</headquarters>	
 		</producer>		
 		<producer producerID="Insomniac">
 			<companyName>Insomniac Games</companyName>
 			<foundationDate>1994</foundationDate>
-			<sharePrice currency="USD">69,84</sharePrice>
+			<sharePrice currency="USD">69.84</sharePrice>
 			<headquarters>Burbank</headquarters>	
 		</producer>		
 		<producer producerID="Maxis">
 			<companyName>Maxis Games</companyName>
 			<foundationDate>1987</foundationDate>
-			<sharePrice currency="USD">56,90</sharePrice>
+			<sharePrice currency="USD">56.90</sharePrice>
 			<headquarters>Redwood Shores</headquarters>	
 		</producer>
 	</producers>
@@ -191,7 +191,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 			<title>Dragon Age Origins</title>
 			<description>Dragon Age: Origins is a role-playing game developed by BioWare and published by Electronic Arts. ... BioWare described Dragon Age: Origins as a "dark heroic fantasy" set in a unique world, and a spiritual successor to their previous Baldur's Gate and Neverwinter Nights franchises.</description>
 			<premierPrice currency = "PLN">139.90</premierPrice>
-			<premierDate>3-11-2007</premierDate>
+			<premierDate>03-11-2007</premierDate>
 			<metariticRate>
 				<metascore>91</metascore>
 				<userScore>8.7</userScore>

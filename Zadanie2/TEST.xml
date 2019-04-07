@@ -3,11 +3,10 @@
 
 <GamesCatalog
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="urn:Test.Namespace"
-xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
+xmlns="http://www.example.org/typy"
+xsi:schemaLocation="http://www.example.org/typy zadanie2_schema.xsd">
 
 	<header>
-		<polskieZnakiŹŻ/>
 		<titleOfProject>Games Catalog</titleOfProject>
 		<description>The best games of the last 15 years!</description>
 		<authors>
@@ -25,7 +24,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 		<modificationDate>17-03-2019</modificationDate>
 		<university>Politechnika Łódzka Wydział Fizyki Technicznej, Informatyki i Matematyki Stosowanej</university>
 	</header>
-	
+
 	<producers>
 		<producer producerID="BW">
 			<companyName>BioWare</companyName>
@@ -49,7 +48,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 			<companyName>Crystal Dynamics</companyName>
 			<foundationDate>1992</foundationDate>
 			<sharePrice currency="USD">87.32</sharePrice>
-			<headquarters>Redwood City</headquarters>	
+		<headquarters>Redwood City</headquarters>	
 		</producer>
 		<producer producerID="Ubisoft">
 			<companyName>Ubisof</companyName>
@@ -77,12 +76,12 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 		</producer>		
 		<producer producerID="Maxis">
 			<companyName>Maxis Games</companyName>
-			<foundationDate>1987</foundationDate>
+	<foundationDate>1987</foundationDate>
 			<sharePrice currency="USD">56.90</sharePrice>
 			<headquarters>Redwood Shores</headquarters>	
 		</producer>
 	</producers>
-	
+					
 	<gameEngines>
 		<engine engineID = "Frostbite" programmingLanguage = "C++">
 			<name>Frostbite</name>
@@ -115,7 +114,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 			<company>CD Project Red</company>
 		</engine>
 	</gameEngines>
-	
+
 	<publishers>
 		<publisher publisherID = "EA">
 			<publisherName>Electronic Arts</publisherName>
@@ -139,7 +138,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 			<publisherName>Activision Blizzard</publisherName>
 		</publisher>
 	</publishers>
-	
+		
 	<Ratings>
 		<Rating ratingID = "A">Adults Only</Rating>
 		<Rating ratingID = "M">Mature</Rating>
@@ -162,7 +161,7 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 		<genre genreID = "Action">Action Game</genre>
 	</genres>
 	<games>
-		<game> <!--producerID = "Dice" engineID = "Frostbite" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="FPS"-->
+		<game producerID = "Dice" engineID = "Frostbite" publisherID = "EA" ratingID = "M"  platformID = "Multi" genreID="FPS">
 			<title>Battlefield 5</title>
 			<description> Enter mankind's greatest conflict with Battlefield 5 as the series goes back to its roots with a never-before-seen portrayal of World War 2. Lead your squad to victory with new ways to turn the battlefield to your advantage. Assemble your Company of customized soldiers, weapons, and vehicles then take them on an epic journey through the Tides of War. Experience the most intense, immersive Battlefield yet. You will never be the same.</description>
 			<premierPrice currency = "PLN">249.90</premierPrice>
@@ -175,5 +174,5 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 			<cover src = "covers/battlefield5.jpg"/>
 		</game>
 	</games>
-	
+
 </GamesCatalog>
