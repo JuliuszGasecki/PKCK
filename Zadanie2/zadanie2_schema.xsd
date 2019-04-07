@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema 
 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-xmlns:myType="http://www.example.org/typy"
-targetNamespace="http://www.example.org/typy"
+xmlns:myType="http://www.foo.com"
+targetNamespace="http://www.foo.com"
 elementFormDefault="qualified">
 
 <!--

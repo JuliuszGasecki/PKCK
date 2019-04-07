@@ -3,8 +3,8 @@
 
 <GamesCatalog
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://www.example.org/typy"
-xsi:schemaLocation="http://www.example.org/typy zadanie2_schema.xsd">
+xmlns="http://www.foo.com"
+xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 	<header>
 		<polskieZnakiŹŻ/>
 		<titleOfProject>Games Catalog</titleOfProject>
