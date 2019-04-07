@@ -116,4 +116,64 @@ xsi:schemaLocation="urn:Test.Namespace zadanie2_schema.xsd">
 		</engine>
 	</gameEngines>
 	
+	<publishers>
+		<publisher publisherID = "EA">
+			<publisherName>Electronic Arts</publisherName>
+		</publisher>
+		<publisher publisherID = "SE">
+			<publisherName>Square Enix</publisherName>
+		</publisher>
+		<publisher publisherID = "BS">
+			<publisherName>Bethesda Softworks</publisherName>
+		</publisher>
+		<publisher publisherID = "Ubi">
+			<publisherName>Ubisoft</publisherName>
+		</publisher>
+		<publisher publisherID = "Sony">
+			<publisherName>Sony Interactive Entertainment</publisherName>
+		</publisher>		
+		<publisher publisherID = "CDProjekt">
+			<publisherName>CD Project Red</publisherName>
+		</publisher>
+		<publisher publisherID = "AB">
+			<publisherName>Activision Blizzard</publisherName>
+		</publisher>
+	</publishers>
+	
+	<Ratings>
+		<Rating ratingID = "A">Adults Only</Rating>
+		<Rating ratingID = "M">Mature</Rating>
+		<Rating ratingID = "T">Teen</Rating>
+		<Rating ratingID = "E">Everyone</Rating>
+		<Rating ratingID = "EC">Early Childhood</Rating>
+	</Ratings>
+	
+	<platforms>	
+		<platform platformID = "PC">PC</platform>
+		<platform platformID = "PS4">Play Station 4</platform>
+		<platform platformID = "XBOX">XBOX One</platform>
+		<platform platformID = "Multi">Multiplatformowe</platform>
+	</platforms>
+	<genres>
+		<genre genreID = "RPG">Role Playing Game</genre>
+		<genre genreID = "FPS">First Person Shooter</genre>
+		<genre genreID = "Stealth">Skradanka</genre>
+		<genre genreID = "RTS">Real Time Strategy </genre>
+		<genre genreID = "Action">Action Game</genre>
+	</genres>
+	<games>
+		<game> <!--producerID = "Dice" engineID = "Frostbite" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="FPS"-->
+			<title>Battlefield 5</title>
+			<description> Enter mankind's greatest conflict with Battlefield 5 as the series goes back to its roots with a never-before-seen portrayal of World War 2. Lead your squad to victory with new ways to turn the battlefield to your advantage. Assemble your Company of customized soldiers, weapons, and vehicles then take them on an epic journey through the Tides of War. Experience the most intense, immersive Battlefield yet. You will never be the same.</description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>15-11-2018</premierDate>
+			<metariticRate>
+				<metascore>81</metascore>
+				<userScore>2.8</userScore>
+				<numberOfVotes>2269</numberOfVotes>
+			</metariticRate>		
+			<cover src = "covers/battlefield5.jpg"/>
+		</game>
+	</games>
+	
 </GamesCatalog>

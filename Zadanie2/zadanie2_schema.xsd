@@ -13,6 +13,11 @@ ROOT
 				<xs:element ref="header"/>
 				<xs:element ref="producers"/>
 				<xs:element ref="gameEngines"/>
+				<xs:element ref="publishers"/>
+				<xs:element ref="Ratings"/>
+				<xs:element ref="platforms"/>
+				<xs:element ref="genres"/>
+				<xs:element ref="games"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -85,15 +90,19 @@ ROOT
 				<xs:element name="headquarters" type="xs:string"/>
 			</xs:sequence>
 			<xs:attribute name="producerID">
-						<xs:simpleType>
-							<xs:restriction base="xs:string">
-							    <xs:whiteSpace value="collapse"/>
-								<xs:minLength value="2"/>
-								<xs:maxLength value="20"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:attribute>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="collapse"/>
+						<xs:minLength value="2"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
 		</xs:complexType>
+		<xs:key name="producer_key">
+			<xs:selector xpath="*/producer"/>
+			<xs:field xpath="@producerID"/>
+		</xs:key>
 	</xs:element>	
 	
 	
@@ -131,25 +140,232 @@ ROOT
 				<xs:element name="name" type="xs:string"/>
 				<xs:element name="company" type="xs:string"/>
 			</xs:sequence>
-			<xs:attribute name="engineID">
+			<xs:attribute name="engineID" use="required">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="collapse"/>						
+						<xs:whiteSpace value="preserve"/>						
 						<xs:minLength value="2"/>
 						<xs:maxLength value="20"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-						<xs:attribute name="programmingLanguage">
+			<xs:attribute name="programmingLanguage" use="optional">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:whiteSpace value="collapse"/>
+						<xs:whiteSpace value="preserve"/>
 						<xs:minLength value="2"/>
 						<xs:maxLength value="20"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
 		</xs:complexType>
+		<xs:key name="engine_key">
+			<xs:selector xpath="*/engine"/>
+			<xs:field xpath="@engineID"/>
+		</xs:key>
+	</xs:element>	
+	
+		<!-- publishers -->
+	<xs:element name="publishers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="publisher"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	
+	<xs:element name="publisher">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="publisherName" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="publisherID" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:whiteSpace value="preserve"/>
+						<xs:minLength value="2"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:key name="publisher_key">
+			<xs:selector xpath="*/publisher"/>
+			<xs:field xpath="@publisherID"/>
+		</xs:key>
+	</xs:element>
+	
+			<!-- RATINGS -->
+	<xs:element name="Ratings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="Rating"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="Rating">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="ratingID" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="A"/>
+								<xs:enumeration value="M"/>
+								<xs:enumeration value="T"/>
+								<xs:enumeration value="E"/>
+								<xs:enumeration value="EC"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+		<xs:key name="Rating_key">
+			<xs:selector xpath="*/Rating"/>
+			<xs:field xpath="@ratingID"/>
+		</xs:key>
+	</xs:element>
+	
+			<!-- PLATFORMS -->
+	<xs:element name="platforms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="platform"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="platform">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="platformID" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="PC"/>
+								<xs:enumeration value="PS4"/>
+								<xs:enumeration value="XBOX"/>
+								<xs:enumeration value="Multi"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+		<xs:key name="platform_key">
+			<xs:selector xpath="*/platform"/>
+			<xs:field xpath="@platformID"/>
+		</xs:key>
+	</xs:element>
+
+				<!-- GENRES -->
+	<xs:element name="genres">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="genre"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="genre">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="genreID" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="RPG"/>
+								<xs:enumeration value="FPS"/>
+								<xs:enumeration value="Stealth"/>
+								<xs:enumeration value="RTS"/>
+								<xs:enumeration value="Action"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+		<xs:key name="genre_key">
+			<xs:selector xpath="*/genre"/>
+			<xs:field xpath="@genreID"/>
+		</xs:key>
 	</xs:element>	
   
+  	<!-- GAMES -->
+	<xs:element name="games">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="game"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="game">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element ref="premierPrice"/>
+				<xs:element name="premierDate">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9][0-9][0-9][0-9]"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="metariticRate"/>
+				<xs:element name="cover">
+					<xs:complexType>
+						<xs:attribute name="src" use="required" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>			
+	</xs:element>	
+	
+	<xs:element name="premierPrice">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:decimal">
+					<xs:attribute name="currency" default="PLN">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="USD"/>
+								<xs:enumeration value="PLN"/>
+								<xs:enumeration value="EURO"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="metariticRate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="metascore">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="100"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="userScore">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="numberOfVotes" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
 </xs:schema>
