@@ -11,56 +11,56 @@ ROOT
 	<xs:element name="GamesCatalog" type="myType:t_GamesCatalog">
 
 		<xs:key name="producer_key">
-			<xs:selector xpath="myType:t_producers/myType:t_producer"/>
+			<xs:selector xpath=".//myType:producer"/>
 			<xs:field xpath="@producerID"/>
 		</xs:key>
 		<xs:keyref name="producerRefkey" refer="myType:producer_key">
-			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:selector xpath=".//myType:game"/>
 			<xs:field xpath="@producerID"/>
 		</xs:keyref>
 
 		<xs:key name="engine_key">
-			<xs:selector xpath="myType:t_gameEngines/myType:t_engine"/>
+			<xs:selector xpath=".//myType:engine"/>
 			<xs:field xpath="@engineID"/>
 		</xs:key>
 			<xs:keyref name="engineRefkey" refer="myType:engine_key">
-			<xs:selector xpath="t_games/myType:t_game"/>
+			<xs:selector xpath=".//myType:game"/>
 			<xs:field xpath="@engineID"/>
 		</xs:keyref>
 	
 		<xs:key name="publisher_key">
-			<xs:selector xpath="myType:t_publisher/myType:t_publisher"/>
+			<xs:selector xpath=".//myType:publisher"/>
 			<xs:field xpath="@publisherID"/>
 		</xs:key>
 		<xs:keyref name="publisherRefkey" refer="myType:publisher_key">
-			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:selector xpath=".//myType:game"/>
 			<xs:field xpath="@publisherID"/>
 		</xs:keyref>
 		
 		<xs:key name="Rating_key">
-			<xs:selector xpath="myType:t_Ratings/myType:t_Rating"/>
-			<xs:field xpath="@RatingID"/>
+			<xs:selector xpath=".//myType:Rating"/>
+			<xs:field xpath="@ratingID"/>
 		</xs:key>
 		<xs:keyref name="RatingRefkey" refer="myType:Rating_key">
-			<xs:selector xpath="myType:t_games/myType:t_game"/>
-			<xs:field xpath="@RatingID"/>
+			<xs:selector xpath=".//myType:game"/>
+			<xs:field xpath="@ratingID"/>
 		</xs:keyref>
 		
 		<xs:key name="platform_key">
-			<xs:selector xpath="myType:t_platforms/myType:t_platform"/>
+			<xs:selector xpath=".//myType:platform"/>
 			<xs:field xpath="@platformID"/>
 		</xs:key>
 		<xs:keyref name="platformRefkey" refer="myType:platform_key">
-			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:selector xpath=".//myType:game"/>
 			<xs:field xpath="@platformID"/>
 		</xs:keyref>
 		
 		<xs:key name="genre_key">
-			<xs:selector xpath="myType:t_genres/myType:t_genre"/>
+			<xs:selector xpath=".//myType:genre"/>
 			<xs:field xpath="@genreID"/>
 		</xs:key>
 		<xs:keyref name="genreRefkey" refer="myType:genre_key">
-			<xs:selector xpath="myType:t_games/myType:t_game"/>
+			<xs:selector xpath=".//myType:game"/>
 			<xs:field xpath="@genreID"/>
 		</xs:keyref>
 	</xs:element>
@@ -109,6 +109,7 @@ ROOT
 		</xs:sequence>
 	</xs:complexType>
 
+	
 	<xs:simpleType name="t_index">
 		<xs:restriction base="xs:integer">
 			<xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9]"/>
@@ -130,8 +131,8 @@ ROOT
 		</xs:sequence>
 		<xs:attribute name="producerID">
 			<xs:simpleType>
-				<xs:restriction base="xs:NCName">
-					<xs:whiteSpace value="collapse"/>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="preserve"/>
 					<xs:minLength value="2"/>
 					<xs:maxLength value="20"/>
 				</xs:restriction>
@@ -141,7 +142,7 @@ ROOT
 	
 	<xs:simpleType name="t_foundationDate">
 		<xs:restriction base="xs:integer">
-			<xs:pattern value="[0-2][0-9][0-9][0-9]"/>
+			<xs:pattern value="[1-2][0-9][0-9][0-9]"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -190,7 +191,7 @@ ROOT
 		</xs:sequence>
 		<xs:attribute name="publisherID" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:NCName">
+				<xs:restriction base="xs:string">
 					<xs:whiteSpace value="preserve"/>
 					<xs:minLength value="2"/>
 					<xs:maxLength value="20"/>
@@ -211,7 +212,7 @@ ROOT
 			<xs:extension base="xs:string">
 				<xs:attribute name="ratingID" use="required">
 					<xs:simpleType>
-						<xs:restriction base="xs:NCName">
+						<xs:restriction base="xs:string">
 							<xs:enumeration value="A"/>
 							<xs:enumeration value="M"/>
 							<xs:enumeration value="T"/>
@@ -235,7 +236,7 @@ ROOT
 			<xs:extension base="xs:string">
 				<xs:attribute name="platformID" use="required">
 					<xs:simpleType>
-						<xs:restriction base="xs:NCName">
+						<xs:restriction base="xs:string">
 							<xs:enumeration value="PC"/>
 							<xs:enumeration value="PS4"/>
 							<xs:enumeration value="XBOX"/>
@@ -259,7 +260,7 @@ ROOT
 			<xs:extension base="xs:string">
 				<xs:attribute name="genreID" use="required">
 					<xs:simpleType>
-						<xs:restriction base="xs:NCName">
+						<xs:restriction base="xs:string">
 							<xs:enumeration value="RPG"/>
 							<xs:enumeration value="FPS"/>
 							<xs:enumeration value="Stealth"/>
@@ -280,7 +281,7 @@ ROOT
 	
 	<xs:complexType name="t_game">
 		<xs:sequence>
-			 <xs:element name="title" type="xs:string"/>
+			<xs:element name="title" type="xs:string"/>
 			<xs:element name="description" type="xs:string"/>
 			<xs:element name="premierPrice" type="myType:t_premierPrice"/>
 			<xs:element name="premierDate" type="myType:t_premierDate"/>
