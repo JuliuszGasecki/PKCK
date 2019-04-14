@@ -11,13 +11,13 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 		<description>The best games of the last 15 years!</description>
 		<authors>
 			<student>
-				<firstName>juliusz</firstName>
-				<lastName>Gąsecki</lastName>
+				<firstName>Juliusz</firstName>
+				<lastName>Gąsecki Gąsecki</lastName>
 				<index>210184</index>
 			</student>
 			<student>
-				<firstName>bartosz</firstName>
-				<lastName>Stempień</lastName>
+				<firstName>Bartosz</firstName>
+				<lastName>Stempień-Stempień</lastName>
 				<index>210327</index>
 			</student>
 		</authors>
