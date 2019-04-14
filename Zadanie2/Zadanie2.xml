@@ -12,7 +12,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 		<authors>
 			<student>
 				<firstName>Juliusz</firstName>
-				<lastName>Gąsecki Gąsecki</lastName>
+				<lastName>Gąsecki</lastName>
 				<index>210184</index>
 			</student>
 			<student>

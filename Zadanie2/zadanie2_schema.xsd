@@ -84,17 +84,10 @@ ROOT
 			<xs:element name="titleOfProject" type="xs:string"/>
 			<xs:element name="description" type="xs:string"/>
 			<xs:element name="authors" type="myType:t_authors"/>
-			<xs:element name="modificationDate" type="myType:t_modificationDate"/>
+			<xs:element name="modificationDate" type="myType:t_Date"/>
 			<xs:element name="university" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
-
-	<xs:simpleType name = "t_modificationDate">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="\d{2}[/.-]\d{2}[/.-]\d{4}"></xs:pattern>
-            <xs:length value="10"/>
-		</xs:restriction>
-	</xs:simpleType>
 	
 	<xs:complexType name="t_authors">
 		<xs:sequence>
@@ -112,7 +105,7 @@ ROOT
 	
 	<xs:simpleType name="t_firstName">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([A-Z](([a-z])*))"/>
+			<xs:pattern value="([\p{Lu}])([\p{Ll}])*"/>
 			      <xs:maxLength value="50"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -164,7 +157,7 @@ ROOT
 	
 	<xs:simpleType name="t_foundationDate">
 		<xs:restriction base="xs:integer">
-			<xs:pattern value="[1-2][0-9][0-9][0-9]"/>
+			<xs:pattern value="[1-2][0-9]{3}"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -306,7 +299,7 @@ ROOT
 			<xs:element name="title" type="myType:t_restrictedString"/>
 			<xs:element name="description" type="xs:string"/>
 			<xs:element name="premierPrice" type="myType:t_premierPrice"/>
-			<xs:element name="premierDate" type="myType:t_premierDate"/>
+			<xs:element name="premierDate" type="myType:t_Date"/>
 			<xs:element name="metariticRate" type="myType:t_metariticRate"/>
 			<xs:element name="cover" type="myType:t_cover"/>
 		</xs:sequence>
@@ -330,12 +323,6 @@ ROOT
 		</xs:simpleContent>
 	</xs:complexType>
 
-	<xs:simpleType name="t_premierDate">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="[0-3][0-9][-.][0-1][0-9][-.][0-9]{4}"/>
-		</xs:restriction>
-	</xs:simpleType>	
-	
 	<xs:complexType name="t_premierPrice">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
@@ -371,6 +358,13 @@ ROOT
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		<xs:simpleType name = "t_Date">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}[/.-]\d{2}[/.-]\d{4}"></xs:pattern>
+            <xs:length value="10"/>
 		</xs:restriction>
 	</xs:simpleType>
 
