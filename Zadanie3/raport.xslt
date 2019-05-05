@@ -18,7 +18,7 @@
     </xsl:template>
     <xsl:template name="Games" match="games">
         <xsl:apply-templates select="game">
-            <xsl:sort select="title"/>
+            <xsl:sort select="metariticRate/metascore" order="descending"/>
         </xsl:apply-templates>
     </xsl:template>
     <xsl:template name="Game" match="game">
@@ -107,13 +107,12 @@
         </xsl:element>
     </xsl:template>
 
-
     <xsl:template name="ReportStatistics">
         <xsl:element name="reportStatistics">
             <xsl:call-template name="GamesCount"/>
-            <!--<xsl:call-template name="MostCommonGenre" />
-            <xsl:call-template name="ThreeTitlesWithBestUserScore" />
-            <xsl:call-template name="ThreeTitlesWithBestMetaScore" />-->
+            <xsl:call-template name="MostCommonGenre" />
+            <xsl:call-template name="MostCommonRating" />
+            <xsl:call-template name="MostCommonProducers" />
             <xsl:call-template name="AveragePrice" />
             <xsl:call-template name="AverageUserRate" />
             <xsl:call-template name="AverageCrirticRate" />
@@ -121,8 +120,6 @@
             <xsl:call-template name="LowestPrice" />
             <xsl:call-template name="PublishersCount" />
             <xsl:call-template name="ProducersCount" />
-            <!--<xsl:call-template name="MostCommonPlatform" />
-            <xsl:call-template name="SpecificRatingCount" />-->
         </xsl:element>
     </xsl:template>
     <xsl:template name="GamesCount">
@@ -168,6 +165,59 @@
         </xsl:element>
     </xsl:template>
 
+    <xsl:template name="MostCommonGenre">
+        <xsl:element name="mostCommonGenre">
+            <xsl:for-each select="/GamesCatalog/genres/genre">
+                <xsl:sort select="genre"/>
+                <xsl:variable name="genreID" select="@genreID" />
+                <xsl:variable name="gamesCount" select="count(/GamesCatalog/games/game[@genreID = $genreID])" />
+                <xsl:element name="genreCount">
+                    <xsl:element name="genre">
+                        <xsl:value-of select="/GamesCatalog/genres/genre[@genreID = $genreID]"/>
+                    </xsl:element>
+                    <xsl:element name="count">
+                        <xsl:value-of select="$gamesCount" />
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+    <xsl:template name="MostCommonRating">
+        <xsl:element name="mostCommonRating">
+            <xsl:for-each select="/GamesCatalog/Ratings/Rating">
+                <xsl:sort select="Rating"/>
+                <xsl:variable name="ratingID" select="@ratingID" />
+                <xsl:variable name="gamesCount" select="count(/GamesCatalog/games/game[@ratingID = $ratingID])" />
+                <xsl:element name="ratingCount">
+                    <xsl:element name="rating">
+                        <xsl:value-of select="/GamesCatalog/Ratings/Rating[@ratingID = $ratingID]"/>
+                    </xsl:element>
+                    <xsl:element name="count">
+                        <xsl:value-of select="$gamesCount" />
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+
+    <xsl:template name="MostCommonProducers">
+        <xsl:element name="mostCommonProducers">
+            <xsl:for-each select="/GamesCatalog/producers/producer">
+                <xsl:sort select="producer"/>
+                <xsl:variable name="producerID" select="@producerID" />
+                <xsl:variable name="gamesCount" select="count(/GamesCatalog/games/game[@producerID = $producerID])" />
+                <xsl:element name="producersCount">
+                    <xsl:element name="producer">
+                        <xsl:value-of select="/GamesCatalog/producers/producer[@producerID = $producerID]/companyName"/>
+                    </xsl:element>
+                    <xsl:element name="count">
+                        <xsl:value-of select="$gamesCount" />
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
 
 
 

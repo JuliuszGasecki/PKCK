@@ -153,7 +153,7 @@
 	<genres>
 		<genre genreID = "RPG">Role Playing Game</genre>
 		<genre genreID = "FPS">First Person Shooter</genre>
-		<genre genreID = "Stealth">Skradanka</genre>
+		<genre genreID = "Stealth">Stealth</genre>
 		<genre genreID = "RTS">Real Time Strategy </genre>
 		<genre genreID = "Action">Action Game</genre>
 	</genres>
