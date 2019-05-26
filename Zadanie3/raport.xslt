@@ -104,7 +104,8 @@
 
     <xsl:template name="AveragePrice">
         <xsl:element name="averagePrice">
-            <xsl:value-of select="concat(format-number(avg(/GamesCatalog/games/game/premierPrice), '#.##'), ' PLN')" />
+            <xsl:variable name="currnecy" select="/GamesCatalog/games/game/premierPrice/@currency" />
+            <xsl:value-of select="concat(format-number(avg(/GamesCatalog/games/game/premierPrice), '#.##'), ' ', $currnecy[1])" />
         </xsl:element>
     </xsl:template>
     <xsl:template name="AverageUserRate">
@@ -125,7 +126,8 @@
     </xsl:template>
     <xsl:template name="LowestPrice">
         <xsl:element name="lowestPrice">
-            <xsl:value-of select="concat (min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.)), ' ', /GamesCatalog/games/game/premierPrice[. =min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')])]/@currency)" />
+            <xsl:variable name="currnecy" select="/GamesCatalog/games/game/premierPrice[. =min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')])]/@currency" />
+            <xsl:value-of select="concat (min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.)), ' ', $currnecy[1])" />
         </xsl:element>
     </xsl:template>
     <xsl:template name="PublishersCount">

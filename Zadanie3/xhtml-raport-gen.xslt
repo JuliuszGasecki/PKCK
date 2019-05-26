@@ -13,6 +13,7 @@
                     border-collapse: collapse;
                     width: 100%;
                     border: 1px;
+                    table-layout: fixed;
                     }
 
                     th, td {
@@ -34,7 +35,8 @@
             <body>
                 <div id="header">
                     <h1>GAMES CATALOG REPORT</h1>
-                    <h2>Authors: Juliusz Gąsecki Bartosz Stempień</h2>
+                    <h2>Juliusz Gąsecki <br/>
+                        Bartosz Stempień</h2>
                     <h3> Report generated:
                         <xsl:value-of select="/report/reportInfo"/>
                     </h3>
@@ -183,7 +185,7 @@
 
                 </div>
                 <div id="footer">
-
+                    <p>Programowanie Komunikacji Człowiek-Komputer 2019 </p>
                 </div>
             </body>
 
