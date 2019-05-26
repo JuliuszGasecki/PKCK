@@ -8,30 +8,52 @@
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
             <head>
                 <title>Games catalog report</title>
+                <style>
+                    table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    border: 1px;
+                    }
+
+                    th, td {
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    table, th, td {
+                    border: 1px solid black;
+                    }
+
+                    tr:nth-child(even) {background-color: #f2f2f2;}
+
+                    #header {
+                        text-align: center;
+                    }
+                </style>
             </head>
             <body>
                 <div id="header">
                     <h1>GAMES CATALOG REPORT</h1>
-                    <h2>Authors: Juliusz Gąsecki|Bartosz Stempień</h2>
+                    <h2>Authors: Juliusz Gąsecki Bartosz Stempień</h2>
                     <h3> Report generated:
                         <xsl:value-of select="/report/reportInfo"/>
                     </h3>
                 </div>
                 <div id="allGames">
                     <h2>Games Info</h2>
-                    <table width = "100%" border ="3">
+                    <table>
                         <tr>
-                            <th>title</th>
-                            <th>producerName</th>
-                            <th>publisherName</th>
-                            <th>engineName</th>
-                            <th>rating</th>
-                            <th>platformName</th>
-                            <th>genre</th>
-                            <th>price</th>
-                            <th>date</th>
-                            <th>userScore</th>
-                            <th>metaScore</th>
+                            <th>Title</th>
+                            <th>Producer Name</th>
+                            <th>Publisher Name</th>
+                            <th>Engine Name</th>
+                            <th>Rating</th>
+                            <th>Platform Name</th>
+                            <th>Genre</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                            <th>User Score</th>
+                            <th>Meta Score</th>
                         </tr>
                         <xsl:for-each select="/report/game">
                             <tr>
@@ -47,7 +69,7 @@
                 <div id="statistics">
                     <div id="producersInfo">
                         <h2>Amount of games developed by Producer</h2>
-                        <table width = "100%" border ="3">
+                        <table>
                             <tr>
                                 <th>Producer</th>
                                 <th>Amount</th>
@@ -65,7 +87,7 @@
                     </div>
                     <div id="ratingsInfo">
                         <h2>Amount of games with rating</h2>
-                        <table width = "100%" border ="3">
+                        <table>
                             <tr>
                                 <th>Rating</th>
                                 <th>Amount</th>
@@ -83,7 +105,7 @@
                     </div>
                     <div id="genresInfo">
                         <h2>Amount of games with specific genres</h2>
-                        <table width = "100%" border ="3">
+                        <table>
                             <tr>
                                 <th>Genre</th>
                                 <th>Amount</th>
@@ -100,54 +122,59 @@
                         </table>
                     </div>
                     <div id="otherStatics">
-                        <table width = "100%" border ="3">
+                        <h2>Statistics</h2>
+                        <table>
                             <tr>
-                                <th>Amount of games</th>
-                                <th>
+                                <th>Name of statistic</th>
+                                <th>Values</th>
+                            </tr>
+                            <tr>
+                                <td>Amount of games</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/gamesCount" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Average price</th>
-                                <th>
+                                <td>Average price</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/averagePrice" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Average user rate</th>
-                                <th>
+                                <td>Average User Rate</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/averageUserRate" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Average metascore</th>
-                                <th>
+                                <td>Average Metascore</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/averageCrirticRate" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>The highest price</th>
-                                <th>
+                                <td>The Highest Price</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/highestPrice" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>The lowest price</th>
-                                <th>
+                                <td>The Lowest Price</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/lowestPrice" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Amount of publishers</th>
-                                <th>
+                                <td>Amount of Publishers</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/publishersCount" />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Amount of producers</th>
-                                <th>
+                                <td>Amount of Producers</td>
+                                <td>
                                     <xsl:value-of select="/report/reportStatistics/producersCount" />
-                                </th>
+                                </td>
                             </tr>
 
                         </table>

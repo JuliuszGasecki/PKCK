@@ -3,6 +3,13 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xsl:output method="xml" version="1.0" encoding="UTF-8"/>
 
+    <xsl:key name="producerKey" match="producer" use="@producerID"/>
+    <xsl:key name="publisherKey" match="publisher" use="@publisherID"/>
+    <xsl:key name="engineKey" match="engine" use="@engineID"/>
+    <xsl:key name="ratingKey" match="Rating" use="@ratingID"/>
+    <xsl:key name="platformKey" match="platform" use="@platformID"/>
+    <xsl:key name="genreKey" match="genre" use="@genreID"/>
+
     <xsl:template name="GamesCatalog" match="/GamesCatalog">
         <xsl:element name="report">
             <xsl:call-template name="ReportMetadata"/>
@@ -12,8 +19,7 @@
     </xsl:template>
     <xsl:template name="ReportMetadata">
         <xsl:element name="reportInfo">
-            <xsl:value-of select="format-dateTime(current-dateTime(),
-                                    '[H01]:[m01] [D01]-[M01]-[Y0001]')"/>
+            <xsl:value-of select="format-dateTime(current-dateTime(),'[H01]:[m01] [D01]-[M01]-[Y0001]')"/>
         </xsl:element>
     </xsl:template>
     <xsl:template name="Games" match="games">
@@ -24,12 +30,24 @@
     <xsl:template name="Game" match="game">
         <xsl:element name="game">
             <xsl:apply-templates select="title"/>
-            <xsl:apply-templates select="@producerID"/>
-            <xsl:apply-templates select="@publisherID"/>
-            <xsl:apply-templates select="@engineID"/>
-            <xsl:apply-templates select="@ratingID"/>
-            <xsl:apply-templates select="@platformID"/>
-            <xsl:apply-templates select="@genreID"/>
+            <xsl:element name="producerName">
+                <xsl:value-of select="key('producerKey', @producerID)/companyName" />
+            </xsl:element>
+            <xsl:element name="publisherName">
+                <xsl:value-of select="key('publisherKey', @publisherID)/publisherName" />
+            </xsl:element>
+            <xsl:element name="engineName">
+                <xsl:value-of select="key('engineKey', @engineID)/name" />
+            </xsl:element>
+            <xsl:element name="ratingName">
+                <xsl:value-of select="key('ratingKey', @ratingID)" />
+            </xsl:element>
+            <xsl:element name="platformName">
+                <xsl:value-of select="key('platformKey', @platformID)" />
+            </xsl:element>
+            <xsl:element name="genreName">
+                <xsl:value-of select="key('genreKey', @genreID)" />
+            </xsl:element>
             <xsl:apply-templates select="premierPrice"/>
             <xsl:apply-templates select="premierDate"/>
             <xsl:apply-templates select="metariticRate"/>
@@ -44,7 +62,7 @@
     </xsl:template>
     <xsl:template name="Price" match="premierPrice">
         <xsl:element name="price">
-            <xsl:value-of select="."/>
+            <xsl:value-of select="concat(., ' ' , @currency)"/>
         </xsl:element>
     </xsl:template>
 
@@ -60,50 +78,6 @@
         </xsl:element>
         <xsl:element name="metaScore">
             <xsl:value-of select="metascore"/>
-        </xsl:element>
-    </xsl:template>
-
-
-    <xsl:template name="Producer" match="@producerID">
-        <xsl:element name="producerName">
-            <xsl:variable name="producerID" select="."/>
-            <xsl:value-of select="/GamesCatalog/producers/producer[@producerID = $producerID]/companyName"/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="Engine" match="@engineID">
-        <xsl:element name="engineName">
-            <xsl:variable name="engineID" select="."/>
-            <xsl:value-of select="concat( /GamesCatalog/gameEngines/engine[@engineID = $engineID]/name, ' by ' ,
-										/GamesCatalog/gameEngines/engine[@engineID = $engineID]/company)"/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="Publisher" match="@publisherID">
-        <xsl:element name="publisherName">
-            <xsl:variable name="publisherID" select="."/>
-            <xsl:value-of select="/GamesCatalog/publishers/publisher[@publisherID = $publisherID]/publisherName"/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="Rating" match="@ratingID">
-        <xsl:element name="rating">
-            <xsl:variable name="ratingID" select="."/>
-            <xsl:value-of select="/GamesCatalog/Ratings/Rating[@ratingID = $ratingID]"/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="Platform" match="@platformID">
-        <xsl:element name="platformName">
-            <xsl:variable name="platformID" select="."/>
-            <xsl:value-of select="/GamesCatalog/platforms/platform[@platformID = $platformID]"/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template name="Genre" match="@genreID">
-        <xsl:element name="genre">
-            <xsl:variable name="genreID" select="."/>
-            <xsl:value-of select="/GamesCatalog/genres/genre[@genreID = $genreID]"/>
         </xsl:element>
     </xsl:template>
 
@@ -130,7 +104,7 @@
 
     <xsl:template name="AveragePrice">
         <xsl:element name="averagePrice">
-            <xsl:value-of select="format-number(avg(/GamesCatalog/games/game/premierPrice), '#.##')" />
+            <xsl:value-of select="concat(format-number(avg(/GamesCatalog/games/game/premierPrice), '#.##'), ' PLN')" />
         </xsl:element>
     </xsl:template>
     <xsl:template name="AverageUserRate">
@@ -145,14 +119,14 @@
     </xsl:template>
     <xsl:template name="HighestPrice">
         <xsl:element name="highestPrice">
-            <xsl:value-of select="max(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.))" />
+            <xsl:variable name="currnecy" select="/GamesCatalog/games/game/premierPrice[. =max(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')])]/@currency" />
+            <xsl:value-of select="concat(max(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.)), ' ', $currnecy[1])" />
         </xsl:element>
     </xsl:template>
     <xsl:template name="LowestPrice">
         <xsl:element name="lowestPrice">
-            <xsl:value-of select="min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.))" />
+            <xsl:value-of select="concat (min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')]/xs:float(.)), ' ', /GamesCatalog/games/game/premierPrice[. =min(/GamesCatalog/games/game/*[starts-with(local-name(), 'premierPrice')])]/@currency)" />
         </xsl:element>
-
     </xsl:template>
     <xsl:template name="PublishersCount">
         <xsl:element name="publishersCount">
