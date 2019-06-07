@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+   <fo:layout-master-set>
+      <fo:simple-page-master master-name="A4"
+                             page-height="29cm"
+                             page-width="21cm"
+                             margin-bottom="2cm"
+                             margin-top="1cm"
+                             margin-left="1.5cm"
+                             margin-right="1.5cm">
+         <fo:region-body margin-top="1cm"/>
+         <fo:region-before extent="3.5cm"/>
+         <fo:region-after extent="1.5cm"/>
+      </fo:simple-page-master>
+   </fo:layout-master-set>
+   <fo:page-sequence master-reference="A4">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:block linefeed-treatment="preserve"
+                   text-align="center"
+                   font-weight="bold"
+                   font-size="18px"
+                   space-after="20pt">Games Catalog</fo:block>
+         <fo:block linefeed-treatment="preserve" font-weight="bold" font-size="12px">Report generated</fo:block>
+         <fo:block linefeed-treatment="preserve" font-size="10px" space-after="15pt">
+            <fo:block/>19:04 26-05-2019</fo:block>
+         <fo:block linefeed-treatment="preserve" font-weight="bold" font-size="12px">Games </fo:block>
+         <fo:table table-layout="fixed"
+                   border-width="1mm"
+                   space-before="10pt"
+                   space-after="20pt">
+            <fo:table-column column-width="60mm"/>
+            <fo:table-column column-width="60mm"/>
+            <fo:table-column column-width="60mm"/>
+            <fo:table-header text-align="center" background-color="silver">
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Title</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Producer name</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Publisher name</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+            </fo:table-header>
+            <fo:table-body>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">The Elder Scrolls V: Skyrim </fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Bethesda Softworks</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Bethesda Softworks</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">The Witcher 3 The Wild Hunt</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">CD Project Red</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">CD Project Red</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Dragon Age Origins</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">BioWare</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Electronic Arts</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Mass Effect</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">BioWare</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Electronic Arts</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">The Witcher 2 Assassins of the Kings</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">CD Project Red</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">CD Project Red</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Assassin’s Creed Odyssey </fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Ubisof</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Ubisoft</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Dragon Age: Inkwizycja</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">BioWare</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Electronic Arts</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Ratchet &amp; Clank</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Insomniac Games</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Sony Interactive Entertainment</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Spore</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Maxis Games</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Electronic Arts</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Battlefield 5</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">EA Digital Illusions Creative Entertainment</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Electronic Arts</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Call of Duty: Black Ops</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Activision Inc.</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Activision Blizzard</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Shadow of the Tomb Raider</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Crystal Dynamics</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Square Enix</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Tom Clancy’s Rainbow Six Siege</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Activision Inc.</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black" font-size="10px">
+                     <fo:block text-align="center">Activision Blizzard</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+            </fo:table-body>
+         </fo:table>
+         <fo:block linefeed-treatment="preserve" font-weight="bold" font-size="12px">Statystyki:</fo:block>
+         <fo:table table-layout="fixed" border-width="1mm" space-before="10pt">
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-column column-width="25mm"/>
+            <fo:table-header text-align="center" background-color="silver">
+               <fo:table-row>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Number of games</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Average price</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Average user rate</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Average critic rate</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Highest price</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">lowest price</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Number of publishers</fo:block>
+                  </fo:table-cell>
+                  <fo:table-cell border="1px solid black">
+                     <fo:block text-align="center"
+                               font-weight="bold"
+                               width="30mm"
+                               font-size="10px">Number of producers</fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+            </fo:table-header>
+            <fo:table-body/>
+         </fo:table>
+      </fo:flow>
+   </fo:page-sequence>
+</fo:root>
