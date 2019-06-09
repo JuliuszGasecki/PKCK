@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb625a04-d0f2-46df-808e-c2b0335086c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/txt_gen.xslt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_gen.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/txt_gen.xslt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_gen.xslt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +18,11 @@
     <session id="-775753033">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
@@ -28,7 +30,7 @@
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -39,7 +41,7 @@
           <entry key="xml" value="7" />
           <entry key="xsd" value="1" />
           <entry key="xsl" value="1" />
-          <entry key="xslt" value="5" />
+          <entry key="xslt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -47,7 +49,7 @@
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SVG" value="1" />
           <entry key="XHTML" value="2" />
-          <entry key="XML" value="14" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -56,7 +58,7 @@
           <entry key="xhtml" value="91" />
           <entry key="xml" value="15" />
           <entry key="xsl" value="778" />
-          <entry key="xslt" value="5621" />
+          <entry key="xslt" value="5817" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -64,7 +66,7 @@
           <entry key="CSS" value="2" />
           <entry key="SVG" value="1" />
           <entry key="XHTML" value="91" />
-          <entry key="XML" value="6409" />
+          <entry key="XML" value="6605" />
           <entry key="XPath2" value="3" />
         </counts>
       </usages-collector>
@@ -75,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raport.xslt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="306">
+              <caret line="18" column="19" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -84,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml-report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="218" column="28" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="28" />
+            <state relative-caret-position="648">
+              <caret line="251" column="27" selection-end-line="264" selection-end-column="9" />
               <folding>
                 <element signature="n#game#0;n#report#0;n#!!top" />
                 <element signature="n#game#1;n#report#0;n#!!top" />
@@ -117,35 +119,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pdf_gen.xsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1256">
-              <caret line="244" column="48" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg_gen.xslt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
+            <state relative-caret-position="510">
               <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/txt_gen.xslt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3760">
-              <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+            <state relative-caret-position="3450">
+              <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="722">
+              <caret line="198" column="13" lean-forward="true" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pdf_gen.xslt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1554">
+              <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -208,6 +214,7 @@
         <option value="$PROJECT_DIR$/result.svg" />
         <option value="$PROJECT_DIR$/svg_gen.xslt" />
         <option value="$PROJECT_DIR$/txt_gen.xslt" />
+        <option value="$PROJECT_DIR$/pdf_gen.xslt" />
       </list>
     </option>
   </component>
@@ -235,8 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,6 +253,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -417,11 +424,12 @@
       <workItem from="1559517582928" duration="6192000" />
       <workItem from="1559937606109" duration="12252000" />
       <workItem from="1560028344290" duration="6589000" />
+      <workItem from="1560083828555" duration="4861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79803000" />
+    <option name="totallyTimeSpent" value="84664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -435,7 +443,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13646056" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -514,6 +522,34 @@
     <entry file="file://$PROJECT_DIR$/result.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/raport.xslt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report-page.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pdf_gen.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4148">
+          <caret line="244" column="48" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg_gen.xslt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Zadanie3.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4641">
@@ -531,38 +567,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svg_gen.xslt">
+    <entry file="file://$PROJECT_DIR$/txt_gen.xslt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="3450">
+          <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pdf_gen.xsl">
+    <entry file="file://$PROJECT_DIR$/report.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1256">
-          <caret line="244" column="48" selection-start-line="244" selection-start-column="48" selection-end-line="244" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report-page.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raport.xslt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="722">
+          <caret line="198" column="13" lean-forward="true" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xml-report.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="218" column="28" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="28" />
+        <state relative-caret-position="648">
+          <caret line="251" column="27" selection-end-line="264" selection-end-column="9" />
           <folding>
             <element signature="n#game#0;n#report#0;n#!!top" />
             <element signature="n#game#1;n#report#0;n#!!top" />
@@ -583,13 +605,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/txt_gen.xslt">
+    <entry file="file://$PROJECT_DIR$/pdf_gen.xslt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3760">
-          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+        <state relative-caret-position="-1554">
+          <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,9 @@
 Games Catalog
 Authors:
 Juliusz Gąsecki i Bartosz Stempień
-Raport wygenerowania: 19:04 26-05-2019
+Raport wygenerowania:
+Dnia 26-05-2019
+O godzinie 19:04
 Games:
 Title: The Elder Scrolls V: Skyrim
 Producer: Bethesda Softworks
@@ -186,12 +188,12 @@ Everyone 1
 Early Childhood 0
 
 Producers statistics:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+BioWare 3
+CD Project Red 2
+Bethesda Softworks 1
+Crystal Dynamics 1
+Ubisof 1
+Activision Inc. 2
+EA Digital Illusions Creative Entertainment 1
+Insomniac Games 1
+Maxis Games 1

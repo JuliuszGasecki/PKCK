@@ -16,44 +16,47 @@
     </xsl:template>
 
     <xsl:template name="info">
-        <xsl:value-of select="substring(concat('&#x20;',/report/reportInfo), 1, 50)" />
+        <xsl:text>&#xA;Dnia</xsl:text>
+        <xsl:value-of select="substring((concat(' ',/report/reportInfo)),7, 50)" />
+        <xsl:text>&#xA;O godzinie</xsl:text>
+        <xsl:value-of select="substring((concat(' ',/report/reportInfo)),1, 6)" />
         <xsl:text>&#xA;</xsl:text>
     </xsl:template>
 
     <xsl:template name="game">
         <xsl:for-each select="report/game">
             <xsl:text>Title:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',title), 1, 50)" />
+            <xsl:value-of select="concat(' ',title)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Producer:</xsl:text>
-            <xsl:value-of select="concat('&#x20;',producerName)" />
+            <xsl:value-of select="concat(' ',producerName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Publisher:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',publisherName), 1, 50)" />
+            <xsl:value-of select="concat(' ',publisherName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Engine:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',engineName), 1, 50)" />
+            <xsl:value-of select="concat( ' ',engineName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Rating:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',ratingName), 1, 50)" />
+            <xsl:value-of select="concat(' ',ratingName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Platform:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',platformName), 1, 50)" />
+            <xsl:value-of select="concat(' ',platformName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Genre:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',genreName), 1, 50)" />
+            <xsl:value-of select="concat(' ',genreName)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Price:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',price), 1, 50)" />
+            <xsl:value-of select="concat(' ',price)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Date:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',date), 1, 50)" />
+            <xsl:value-of select="concat(' ',date)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>User Score:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',userScore), 1, 50)" />
+            <xsl:value-of select="concat(' ',userScore)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>Meta Score:</xsl:text>
-            <xsl:value-of select="substring(concat('&#x20;',metaScore), 1, 50)" />
+            <xsl:value-of select="concat(' ',metaScore)" />
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
@@ -62,28 +65,28 @@
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>General:&#xA;</xsl:text>
         <xsl:text>Amount of games:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',gamesCount), 1, 50)" />
+        <xsl:value-of select="concat(' ',gamesCount)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Average Price:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',averagePrice), 1, 50)" />
+        <xsl:value-of select="concat(' ',averagePrice)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Average users rate:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',averageUserRate), 1, 50)" />
+        <xsl:value-of select="concat(' ',averageUserRate)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Average critics rate:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',averageCrirticRate), 1, 50)" />
+        <xsl:value-of select="concat(' ',averageCrirticRate)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Highest price:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',highestPrice), 1, 50)" />
+        <xsl:value-of select="concat(' ',highestPrice)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Lowest price:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',lowestPrice), 1, 50)" />
+        <xsl:value-of select="concat(' ',lowestPrice)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Amount of publishers:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',publishersCount), 1, 50)" />
+        <xsl:value-of select="concat(' ',publishersCount)" />
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>Amount of producers:</xsl:text>
-        <xsl:value-of select="substring(concat('&#x20;',producersCount), 1, 50)" />
+        <xsl:value-of select="concat(' ',producersCount)" />
         <xsl:text>&#xA;</xsl:text>
 
         <xsl:text>&#xA;</xsl:text>
@@ -98,19 +101,19 @@
     </xsl:template>
     <xsl:template name="mostCommongenres" match="/report/reportStatistics/mostCommonGenre">
         <xsl:for-each select="genreCount">
-            <xsl:value-of select="substring(concat(genre, '&#x20;',count), 1, 50)" />
+            <xsl:value-of select="concat(genre, ' ',count)" />
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
     </xsl:template>
     <xsl:template name="mostCommonrating" match="/report/reportStatistics/mostCommonRating">
         <xsl:for-each select="ratingCount">
-            <xsl:value-of select="substring(concat(rating, '&#x20;',count), 1, 50)" />
+            <xsl:value-of select="concat(rating, ' ',count)" />
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
     </xsl:template>
     <xsl:template name="mostCommonproducers" match="/report/reportStatistics/mostCommonProducers">
         <xsl:for-each select="producersCount">
-            <xsl:value-of select="substring(concat(producers, '&#x20;',title), 1, 50)" />
+            <xsl:value-of select="concat(producer, ' ',count)" />
             <xsl:text>&#xA;</xsl:text>
         </xsl:for-each>
     </xsl:template>
