@@ -5,9 +5,9 @@
 
     <xsl:template match="/">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <script type="text/ecmascript">
+            <script type="text/javascript">
                 <![CDATA[
-                    function onClickButtonGames(e) {
+                    function onClickButtonGames() {
                         var games = document.getElementById("game");
                         if(games.style.visibility == "visible") {
 							games.style.visibility = "hidden";

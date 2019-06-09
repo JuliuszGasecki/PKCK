@@ -5,14 +5,14 @@
         <fo:root>
             <fo:layout-master-set>
                 <fo:simple-page-master master-name="A4" page-height="29cm" page-width="21cm" margin-bottom="2cm" margin-top="1cm" margin-left="1.5cm" margin-right="1.5cm">
-                    <fo:region-body margin-top="1cm" />
+                    <fo:region-body/>
                     <fo:region-before extent="3.5cm" />
                     <fo:region-after extent="1.5cm" />
                 </fo:simple-page-master>
             </fo:layout-master-set>
             <fo:page-sequence master-reference="A4">
                 <fo:flow flow-name="xsl-region-body">
-                    <fo:block linefeed-treatment="preserve" text-align="center" font-weight="bold" font-size="22px" space-after="20pt">Games Catalog</fo:block>
+                    <fo:block linefeed-treatment="preserve" text-align="center" font-weight="bold" font-size="22px" space-after="30pt">Games Catalog</fo:block>
                     <fo:block linefeed-treatment="preserve" text-align="center" font-weight="bold" font-size="12px">Authors:</fo:block>
                     <fo:block linefeed-treatment="preserve" text-align="center" font-weight="bold" font-size="10px">Juliusz Gasecki</fo:block>
                     <fo:block linefeed-treatment="preserve" text-align="center" font-weight="bold" font-size="10px">Bartosz Stempien</fo:block>
