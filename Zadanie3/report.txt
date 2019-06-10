@@ -4,196 +4,198 @@ Juliusz Gąsecki i Bartosz Stempień
 Raport wygenerowania:
 Dnia 26-05-2019
 O godzinie 19:04
+
+
 Games:
-Title: The Elder Scrolls V: Skyrim
-Producer: Bethesda Softworks
-Publisher: Bethesda Softworks
-Engine: Creation Engine
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 159.90 PLN
-Date: 11-11-2011
-User Score: 8.2
-Meta Score: 94
+Title:						The Elder Scrolls V: Skyrim
+Producer:					Bethesda Softworks
+Publisher:					Bethesda Softworks
+Engine:						Creation Engine
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						159.90 PLN
+Date:						11-11-2011
+User Score:					8.2
+Meta Score:					94
 
-Title: The Witcher 3 The Wild Hunt
-Producer: CD Project Red
-Publisher: CD Project Red
-Engine: REDengine
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 139.90 PLN
-Date: 19-05-2015
-User Score: 9.4
-Meta Score: 93
+Title:						The Witcher 3 The Wild Hunt
+Producer:					CD Project Red
+Publisher:					CD Project Red
+Engine:						REDengine
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						139.90 PLN
+Date:						19-05-2015
+User Score:					9.4
+Meta Score:					93
 
-Title: Dragon Age Origins
-Producer: BioWare
-Publisher: Electronic Arts
-Engine: Eclipse engine
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 139.90 PLN
-Date: 03-11-2007
-User Score: 8.7
-Meta Score: 91
+Title:						Dragon Age Origins
+Producer:					BioWare
+Publisher:					Electronic Arts
+Engine:						Eclipse engine
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						139.90 PLN
+Date:						03-11-2007
+User Score:					8.7
+Meta Score:					91
 
-Title: Mass Effect
-Producer: BioWare
-Publisher: Electronic Arts
-Engine: Unreal engine
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 129.90 PLN
-Date: 28-05-2008
-User Score: 8.6
-Meta Score: 89
+Title:						Mass Effect
+Producer:					BioWare
+Publisher:					Electronic Arts
+Engine:						Unreal engine
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						129.90 PLN
+Date:						28-05-2008
+User Score:					8.6
+Meta Score:					89
 
-Title: The Witcher 2 Assassins of the Kings
-Producer: CD Project Red
-Publisher: CD Project Red
-Engine: REDengine
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 119.90 PLN
-Date: 17-05-2011
-User Score: 8.5
-Meta Score: 88
+Title:						The Witcher 2 Assassins of the Kings
+Producer:					CD Project Red
+Publisher:					CD Project Red
+Engine:						REDengine
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						119.90 PLN
+Date:						17-05-2011
+User Score:					8.5
+Meta Score:					88
 
-Title: Assassin’s Creed Odyssey
-Producer: Ubisof
-Publisher: Ubisoft
-Engine: Anvil
-Rating: Mature
-Platform: Multi platform
-Genre: Action Game
-Price: 249.90 PLN
-Date: 05-09-2018
-User Score: 5.6
-Meta Score: 86
+Title:						Assassin’s Creed Odyssey
+Producer:					Ubisof
+Publisher:					Ubisoft
+Engine:						Anvil
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Action Game
+Price:						249.90 PLN
+Date:						05-09-2018
+User Score:					5.6
+Meta Score:					86
 
-Title: Dragon Age: Inkwizycja
-Producer: BioWare
-Publisher: Electronic Arts
-Engine: Frostbite
-Rating: Mature
-Platform: Multi platform
-Genre: Role Playing Game
-Price: 154.90 PLN
-Date: 18-11-2014
-User Score: 5.9
-Meta Score: 85
+Title:						Dragon Age: Inkwizycja
+Producer:					BioWare
+Publisher:					Electronic Arts
+Engine:						Frostbite
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Role Playing Game
+Price:						154.90 PLN
+Date:						18-11-2014
+User Score:					5.9
+Meta Score:					85
 
-Title: Ratchet & Clank
-Producer: Insomniac Games
-Publisher: Sony Interactive Entertainment
-Engine: Anvil
-Rating: Everyone
-Platform: Play Station 4
-Genre: Action Game
-Price: 149.90 PLN
-Date: 12-04-2016
-User Score: 8.6
-Meta Score: 85
+Title:						Ratchet & Clank
+Producer:					Insomniac Games
+Publisher:					Sony Interactive Entertainment
+Engine:						Anvil
+Rating:						Everyone
+Platform:					Play Station 4
+Genre:						Action Game
+Price:						149.90 PLN
+Date:						12-04-2016
+User Score:					8.6
+Meta Score:					85
 
-Title: Spore
-Producer: Maxis Games
-Publisher: Electronic Arts
-Engine: Unreal engine
-Rating: Teen
-Platform: Multi platform
-Genre: Real Time Strategy
-Price: 159.90 PLN
-Date: 05-09-2008
-User Score: 5.4
-Meta Score: 84
+Title:						Spore
+Producer:					Maxis Games
+Publisher:					Electronic Arts
+Engine:						Unreal engine
+Rating:						Teen
+Platform:					Multi platform
+Genre:						Real Time Strategy
+Price:						159.90 PLN
+Date:						05-09-2008
+User Score:					5.4
+Meta Score:					84
 
-Title: Battlefield 5
-Producer: EA Digital Illusions Creative Entertainment
-Publisher: Electronic Arts
-Engine: Frostbite
-Rating: Mature
-Platform: Multi platform
-Genre: First Person Shooter
-Price: 249.90 PLN
-Date: 15-11-2018
-User Score: 2.8
-Meta Score: 81
+Title:						Battlefield 5
+Producer:					EA Digital Illusions Creative Entertainment
+Publisher:					Electronic Arts
+Engine:						Frostbite
+Rating:						Mature
+Platform:					Multi platform
+Genre:						First Person Shooter
+Price:						249.90 PLN
+Date:						15-11-2018
+User Score:					2.8
+Meta Score:					81
 
-Title: Call of Duty: Black Ops
-Producer: Activision Inc.
-Publisher: Activision Blizzard
-Engine: Frostbite
-Rating: Mature
-Platform: Multi platform
-Genre: First Person Shooter
-Price: 139.90 PLN
-Date: 09-11-2010
-User Score: 5.4
-Meta Score: 81
+Title:						Call of Duty: Black Ops
+Producer:					Activision Inc.
+Publisher:					Activision Blizzard
+Engine:						Frostbite
+Rating:						Mature
+Platform:					Multi platform
+Genre:						First Person Shooter
+Price:						139.90 PLN
+Date:						09-11-2010
+User Score:					5.4
+Meta Score:					81
 
-Title: Shadow of the Tomb Raider
-Producer: Crystal Dynamics
-Publisher: Square Enix
-Engine: Frostbite
-Rating: Mature
-Platform: Multi platform
-Genre: Action Game
-Price: 249.90 PLN
-Date: 14-10-2018
-User Score: 6.9
-Meta Score: 77
+Title:						Shadow of the Tomb Raider
+Producer:					Crystal Dynamics
+Publisher:					Square Enix
+Engine:						Frostbite
+Rating:						Mature
+Platform:					Multi platform
+Genre:						Action Game
+Price:						249.90 PLN
+Date:						14-10-2018
+User Score:					6.9
+Meta Score:					77
 
-Title: Tom Clancy’s Rainbow Six Siege
-Producer: Activision Inc.
-Publisher: Activision Blizzard
-Engine: Frostbite
-Rating: Mature
-Platform: Multi platform
-Genre: First Person Shooter
-Price: 159.90 PLN
-Date: 01-12-2015
-User Score: 7.4
-Meta Score: 73
+Title:						Tom Clancy’s Rainbow Six Siege
+Producer:					Activision Inc.
+Publisher:					Activision Blizzard
+Engine:						Frostbite
+Rating:						Mature
+Platform:					Multi platform
+Genre:						First Person Shooter
+Price:						159.90 PLN
+Date:						01-12-2015
+User Score:					7.4
+Meta Score:					73
 
 Statistics:
 
 General:
-Amount of games: 13
-Average Price: 169.52 PLN
-Average users rate: 7.03
-Average critics rate: 85.15
-Highest price: 249.9 PLN
-Lowest price: 119.9 PLN
-Amount of publishers: 7
-Amount of producers: 9
+Amount of games:			13
+Average Price:				169.52 PLN
+Average users rate:			7.03
+Average critics rate:		85.15
+Highest price:				249.9 PLN
+Lowest price:				119.9 PLN
+Amount of publishers:		7
+Amount of producers:		9
 
 Genre statistics:
-Role Playing Game 6
-First Person Shooter 3
-Stealth 0
-Real Time Strategy 1
-Action Game 3
+Role Playing Game           6
+First Person Shooter        3
+Stealth                     0
+Real Time Strategy          1
+Action Game                 3
 
 Rating statistics:
-Adults Only 0
-Mature 11
-Teen 1
-Everyone 1
-Early Childhood 0
+Adults Only                 0
+Mature                      11
+Teen                        1
+Everyone                    1
+Early Childhood             0
 
 Producers statistics:
-BioWare 3
-CD Project Red 2
-Bethesda Softworks 1
-Crystal Dynamics 1
-Ubisof 1
-Activision Inc. 2
-EA Digital Illusions Creative Entertainment 1
-Insomniac Games 1
-Maxis Games 1
+BioWare                                           3
+CD Project Red                                    2
+Bethesda Softworks                                1
+Crystal Dynamics                                  1
+Ubisof                                            1
+Activision Inc.                                   2
+EA Digital Illusions Creative Entertainment       1
+Insomniac Games                                   1
+Maxis Games                                       1
