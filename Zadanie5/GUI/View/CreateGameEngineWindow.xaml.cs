@@ -10,26 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GUI.Model;
 
 namespace GUI.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy CreateGameEngine.xaml
     /// </summary>
-    public partial class MainWindow : Window
+
+    public partial class CreateGameEngineWindow : Window
     {
         public GamesCatalogModel.GameCatalogRoot GamesXml { get; set; }
-        public static MainWindow AppWindow;
 
-        public MainWindow()
+        public static CreateGameEngineWindow AppWindow;
+        public Delegate ReloadMain;
+        public CreateGameEngineWindow(GamesCatalogModel.GameCatalogRoot gamesXml)
         {
-            InitializeComponent();
-            AppWindow = this;
-            this.Title = "PKCK Zadanie5";
+            GamesXml = gamesXml;
+            this.Title = "Create Game Engine";
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            AppWindow = this;
+            InitializeComponent();
         }
     }
+
+
 }

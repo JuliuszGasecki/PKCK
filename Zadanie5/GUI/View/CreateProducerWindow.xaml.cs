@@ -21,7 +21,6 @@ namespace GUI.View
     public partial class CreateProducerWindow : Window
     {
         public GamesCatalogModel.GameCatalogRoot GamesXml { get; set; }
-        public string SelectedItem { get; set; }
  
         public static CreateProducerWindow AppWindow;
         public Delegate ReloadMain;
@@ -32,11 +31,6 @@ namespace GUI.View
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             AppWindow = this;
             InitializeComponent();
-        }
-
-        private void GetSelectedItem(object sender, MouseButtonEventArgs e)
-        {
-            string SelectedItem = (string)Currency.SelectedItems[0];
         }
     }
 }

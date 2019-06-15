@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using GUI.Model;
 using GUI.View;
@@ -18,6 +19,22 @@ namespace GUI.ViewModel
         private string _headquarter;
         private string _sharePrice;
         private ObservableCollection<string> _currencyList;
+        private string _selectedItem;
+
+        public CreateProducerViewModel()
+        {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
+            {
+                _currencyList = new ObservableCollection<string>();
+                foreach (var c in CreateProducerWindow.AppWindow.GamesXml.Producers.Producers)
+                    if (!_currencyList.Contains(c.SharePrice.CurrencyId))
+                    {
+                        _currencyList.Add(c.SharePrice.CurrencyId);
+                    }
+
+                CurrencyList = _currencyList;
+            }
+        }
         public ICommand AddProducer { get { return new RelayCommand(AddProducerFun, CanExecute); } }
         private void AddProducerFun()
         {
@@ -30,11 +47,12 @@ namespace GUI.ViewModel
             };
             var s = new GamesCatalogModel.ProducerRoot.Producer.SharePriceInfo
             {
-                CurrencyId = CreateProducerWindow.AppWindow.SelectedItem, Amount = SharePrice
+                CurrencyId = GetSelectedItem, Amount = SharePrice
             };
             p.SharePrice = s;
             CreateProducerWindow.AppWindow.GamesXml.Producers.Producers.Add(p);
             CreateProducerWindow.AppWindow.ReloadMain.DynamicInvoke();
+            MessageBox.Show("New producer ID: " + p.ProducerId + " name: " + p.CompanyName + " was created", "Added");
         }
 
         private string CreateId()
@@ -42,6 +60,16 @@ namespace GUI.ViewModel
             string output = string.Concat(CompanyName.Where(c => c >= 'A' && c <= 'Z'));
             output += FoundationDate;
             return output;
+        }
+
+        public string GetSelectedItem
+        {
+            get => this._selectedItem;
+            set
+            {
+                _selectedItem = value;
+                RaisePropertyChanged("GetSelectedItem");
+            }
         }
 
         public ObservableCollection<string> CurrencyList

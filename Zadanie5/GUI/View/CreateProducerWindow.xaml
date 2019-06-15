@@ -20,7 +20,7 @@
         <TextBox Text="{Binding FoundationDate}" HorizontalAlignment="Left" Height="23" Margin="244,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Text="{Binding SharePrice}" HorizontalAlignment="Left" Height="23" Margin="244,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Text="{Binding CompanyName}" HorizontalAlignment="Left" Height="23" Margin="244,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <ListBox Name ="Currency" ItemsSource="{Binding CurrencyList}"  MouseDoubleClick="GetSelectedItem" HorizontalAlignment="Left" Height="23" Margin="386,160,0,0" VerticalAlignment="Top" Width="158"/>
+        <ListBox ItemsSource="{Binding CurrencyList}"  SelectedItem="{Binding GetSelectedItem}" Height="57" Margin="386,160,10,0" VerticalAlignment="Top"/>
         <Button Command="{Binding AddProducer}" Content="Okay" HorizontalAlignment="Left" Margin="385,285,0,0" VerticalAlignment="Top" Width="149" Height="38"/>
 
     </Grid>

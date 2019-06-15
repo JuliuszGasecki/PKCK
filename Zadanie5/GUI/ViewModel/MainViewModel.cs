@@ -24,7 +24,9 @@ namespace GUI.ViewModel
         private string _myOwnXmlString;
         private string _xmlString;
         private string _schemaPath;
-        private string _selectedItemDummy;
+        private string _selectedItemDummyC;
+        private string _selectedItemDummyM;
+        private string _selectedItemDummyD;
         private ObservableCollection<string> _catalogGameData;
         private ObservableCollection<string> _catalogGameDataToCreate;
         private GamesCatalogModel.GameCatalogRoot _gamesXml;
@@ -304,19 +306,70 @@ namespace GUI.ViewModel
         {
             get
             {
-                if (_selectedItemDummy != null)
+                if (_selectedItemDummyC != null)
+                {
+                    if (_selectedItemDummyC.Equals("Producer"))
+                    {
+                        CreateProducerWindow window = new CreateProducerWindow(_gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyC.Equals("Game Engine"))
+                    {
+                        CreateGameEngineWindow window = new CreateGameEngineWindow(_gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+                }
+                return _selectedItemDummyC;
+            }
+            set
+            {
+                _selectedItemDummyC = value;
+                RaisePropertyChanged("GetSelectedItemToCreate");
+            }
+        }
+
+        public string GetSelectedItemToDelete
+        {
+            get
+            {
+                if (_selectedItemDummyD != null)
                 {
                     CreateProducerWindow window = new CreateProducerWindow(_gamesXml);
                     ReloadListEvent += new RefreshMain(Reload);
                     window.ReloadMain = ReloadListEvent;
                     window.ShowDialog();
                 }
-                return _selectedItemDummy;
+                return _selectedItemDummyD;
             }
             set
             {
-                _selectedItemDummy = value;
-                RaisePropertyChanged("GetSelectedItemToCreate");
+                _selectedItemDummyD = value;
+                RaisePropertyChanged("GetSelectedItemToDelete");
+            }
+        }
+
+        public string GetSelectedItemToModify
+        {
+            get
+            {
+                if (_selectedItemDummyM != null)
+                {
+                    CreateProducerWindow window = new CreateProducerWindow(_gamesXml);
+                    ReloadListEvent += new RefreshMain(Reload);
+                    window.ReloadMain = ReloadListEvent;
+                    window.ShowDialog();
+                }
+                return _selectedItemDummyM;
+            }
+            set
+            {
+                _selectedItemDummyM = value;
+                RaisePropertyChanged("GetSelectedItemToModify");
             }
         }
 
