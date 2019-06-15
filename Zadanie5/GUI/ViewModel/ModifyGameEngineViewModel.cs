@@ -12,41 +12,32 @@ using GUI.View;
 
 namespace GUI.ViewModel
 {
-    public class CreateGameEngineViewModel : INotifyPropertyChanged
+    public class ModifyGameEngineViewModel : INotifyPropertyChanged
     {
         private string _name;
         private string _company;
         private string _language;
 
-        public ICommand AddGameEngine { get { return new RelayCommand(AddGameEngineFun, CanExecute); } }
-        private void AddGameEngineFun()
+        public ICommand ModifyGameEngine { get { return new RelayCommand(ModifyGameEngineFun, CanExecute); } }
+        private void ModifyGameEngineFun()
         {
-            var g = new GamesCatalogModel.GameEngineRoot.Engine
+            var dummy = ModifyGameEngineWindow.AppWindow.Id.Split(' ');
+            string id = dummy[1];
+            var g = ModifyGameEngineWindow.AppWindow.GamesXml.GameEngines.GameEngines.FirstOrDefault(x => x.EngineId.Equals(id));
+            if (!string.IsNullOrEmpty(_name))
             {
-                EngineId = CreateId(), Company = Company, Name = Name, ProgrammingLanguage = Langauage
-            };
-            CreateGameEngineWindow.AppWindow.GamesXml.GameEngines.GameEngines.Add(g);
-            CreateGameEngineWindow.AppWindow.ReloadMain.DynamicInvoke();
-            MessageBox.Show("New Game Engine ID: " + g.EngineId + " name: " + g.Name + " was created", "Added");
-        }
-
-        private string CreateId()
-        {
-            string output = Name.First().ToString().ToUpper() + Name.Substring(1);
-            var letters = output.Split(' ');
-            if (letters.Length == 1)
-            {
-                return output;
+                g.Name = _name;
             }
-            else
+            if (!string.IsNullOrEmpty(_company))
             {
-                output = "";
-                foreach (var l in letters)
-                {
-                    output += l[0];
-                }
-                return output;
+                g.Company = _company;
             }
+            if (!string.IsNullOrEmpty(_language))
+            {
+                g.ProgrammingLanguage = _language;
+            }
+            ModifyGameEngineWindow.AppWindow.ReloadMain.DynamicInvoke();
+            MessageBox.Show("Game Engine ID: " + g.EngineId + " name: " + g.Name + " was updated", "Added");
         }
 
         public string Langauage

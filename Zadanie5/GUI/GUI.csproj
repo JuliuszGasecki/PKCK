@@ -63,6 +63,10 @@
     <Compile Include="ViewModel\CreateProducerViewModel.cs" />
     <Compile Include="ViewModel\CreatePublisherViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ModifyGameEngineViewModel.cs" />
+    <Compile Include="ViewModel\ModifyGameViewModel.cs" />
+    <Compile Include="ViewModel\ModifyProducerViewModel.cs" />
+    <Compile Include="ViewModel\ModifyPublisherViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\CreateGameEngineWindow.xaml.cs">
       <DependentUpon>CreateGameEngineWindow.xaml</DependentUpon>
@@ -72,6 +76,18 @@
     </Compile>
     <Compile Include="View\CreateProducerWindow.xaml.cs">
       <DependentUpon>CreateProducerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyGameEngineWindow.xaml.cs">
+      <DependentUpon>ModifyGameEngineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyGameWindow.xaml.cs">
+      <DependentUpon>ModifyGameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyProducerWindow.xaml.cs">
+      <DependentUpon>ModifyProducerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyPublisherWindow.xaml.cs">
+      <DependentUpon>ModifyPublisherWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\CreateGameEngineWindow.xaml">
       <SubType>Designer</SubType>
@@ -101,6 +117,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\CreateProducerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyGameEngineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyProducerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyPublisherWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -358,6 +358,37 @@ namespace GUI.ViewModel
             {
                 if (_selectedItemDummyM != null)
                 {
+                    if (_selectedItemDummyM.Contains("producer"))
+                    {
+                        ModifyProducerWindow window = new ModifyProducerWindow(_selectedItemDummyM, _gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyM.Contains("publisher"))
+                    {
+                        ModifyPublisherWindow window = new ModifyPublisherWindow(_selectedItemDummyM, _gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyM.Contains("engine"))
+                    {
+                        ModifyGameEngineWindow window = new ModifyGameEngineWindow(_selectedItemDummyM, _gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyM.Contains("game"))
+                    {
+                        ModifyGameWindow window = new ModifyGameWindow(_selectedItemDummyM, _gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
                 }
                 return _selectedItemDummyM;
             }

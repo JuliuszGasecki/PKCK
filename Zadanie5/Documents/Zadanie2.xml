@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<GamesCatalog
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.foo.com"
+xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
+	<header>
+		<polskieZnakiŹŻ/>
+		<titleOfProject>Games Catalog</titleOfProject>
+		<description>The best games of the last 15 years!</description>
+		<authors>
+			<student>
+				<firstName>Juliusz</firstName>
+				<lastName>Gąsecki</lastName>
+				<index>210184</index>
+			</student>
+			<student>
+				<firstName>Bartosz</firstName>
+				<lastName>Stempień</lastName>
+				<index>210327</index>
+			</student>
+		</authors>
+		<modificationDate>17.03.2019</modificationDate>
+		<university>Politechnika Łódzka Wydział Fizyki Technicznej, Informatyki i Matematyki Stosowanej</university>
+	</header>
+	
+	<producers>
+		<producer producerID="BW">
+			<companyName>BioWare</companyName>
+			<foundationDate>1995</foundationDate>
+			<sharePrice currency="USD">98.36 </sharePrice>
+			<headquarters>Edmonton</headquarters>	
+		</producer>
+		<producer producerID="CDP">
+			<companyName>CD Project Red</companyName>
+			<foundationDate>1994</foundationDate>
+			<sharePrice currency="PLN">185.90</sharePrice>
+			<headquarters>Warszwa</headquarters>	
+		</producer>
+		<producer producerID="Bethesda">
+			<companyName>Bethesda Softworks</companyName>
+			<foundationDate>1986</foundationDate>
+			<sharePrice currency="USD">78.34</sharePrice>
+			<headquarters>Rockville</headquarters>	
+		</producer>
+		<producer producerID="CD">
+			<companyName>Crystal Dynamics</companyName>
+			<foundationDate>1992</foundationDate>
+			<sharePrice currency="USD">87.32</sharePrice>
+			<headquarters>Redwood City</headquarters>	
+		</producer>
+		<producer producerID="Ubisoft">
+			<companyName>Ubisof</companyName>
+			<foundationDate>1986</foundationDate>
+			<sharePrice currency="EURO">79.50</sharePrice>
+			<headquarters>Montreuil</headquarters>	
+		</producer>
+		<producer producerID="Activision">
+			<companyName>Activision Inc.</companyName>
+			<foundationDate>1979</foundationDate>
+			<sharePrice currency="USD">87.90</sharePrice>
+			<headquarters>Santa Monica</headquarters>	
+		</producer>
+		<producer producerID="Dice">
+			<companyName>EA Digital Illusions Creative Entertainment</companyName>
+			<foundationDate>1992</foundationDate>
+			<sharePrice currency="USD">97.54</sharePrice>
+			<headquarters>Stockholm</headquarters>	
+		</producer>		
+		<producer producerID="Insomniac">
+			<companyName>Insomniac Games</companyName>
+			<foundationDate>1994</foundationDate>
+			<sharePrice currency="USD">69.84</sharePrice>
+			<headquarters>Burbank</headquarters>	
+		</producer>		
+		<producer producerID="Maxis">
+			<companyName>Maxis Games</companyName>
+			<foundationDate>1987</foundationDate>
+			<sharePrice currency="USD">56.90</sharePrice>
+			<headquarters>Redwood Shores</headquarters>	
+		</producer>
+	</producers>
+	
+	<gameEngines>
+		<engine engineID = "Frostbite" programmingLanguage = "C++">
+			<name>Frostbite</name>
+			<company>EA Dice</company>
+		</engine>
+		
+		<engine engineID = "FEngine" programmingLanguage = "C++">
+			<name>Foundation engine</name>
+			<company>Crystal Dynamics</company>
+		</engine>
+		
+		<engine engineID = "EclipseEngine" programmingLanguage = "C++">
+			<name>Eclipse engine</name>
+			<company>EclipseOrigins</company>
+		</engine>
+		<engine engineID = "Unreal" programmingLanguage = "C++">
+			<name>Unreal engine</name>
+			<company>Epic Games</company>
+		</engine>
+		<engine engineID = "CE" programmingLanguage = "C++">
+			<name>Creation Engine</name>
+			<company>Bethesda Games Studios</company>
+		</engine>
+		<engine engineID = "Anvil" programmingLanguage = "C++">
+			<name>Anvil</name>
+			<company>Ubisof</company>
+		</engine>		
+		<engine engineID = "REDengine" programmingLanguage = "C++">
+			<name>REDengine</name>
+			<company>CD Project Red</company>
+		</engine>
+	</gameEngines>
+	
+	<publishers>
+		<publisher publisherID = "EA">
+			<publisherName>Electronic Arts</publisherName>
+		</publisher>
+		<publisher publisherID = "SE">
+			<publisherName>Square Enix</publisherName>
+		</publisher>
+		<publisher publisherID = "BS">
+			<publisherName>Bethesda Softworks</publisherName>
+		</publisher>
+		<publisher publisherID = "Ubi">
+			<publisherName>Ubisoft</publisherName>
+		</publisher>
+		<publisher publisherID = "Sony">
+			<publisherName>Sony Interactive Entertainment</publisherName>
+		</publisher>		
+		<publisher publisherID = "CDProjekt">
+			<publisherName>CD Project Red</publisherName>
+		</publisher>
+		<publisher publisherID = "AB">
+			<publisherName>Activision Blizzard</publisherName>
+		</publisher>
+	</publishers>
+	
+	<Ratings>
+		<Rating ratingID = "A">Adults Only</Rating>
+		<Rating ratingID = "M">Mature</Rating>
+		<Rating ratingID = "T">Teen</Rating>
+		<Rating ratingID = "E">Everyone</Rating>
+		<Rating ratingID = "EC">Early Childhood</Rating>
+	</Ratings>
+	
+	<platforms>	
+		<platform platformID = "PC">PC</platform>
+		<platform platformID = "PS4">Play Station 4</platform>
+		<platform platformID = "XBOX">XBOX One</platform>
+		<platform platformID = "Multi">Multiplatformowe</platform>
+	</platforms>
+	<genres>
+		<genre genreID = "RPG">Role Playing Game</genre>
+		<genre genreID = "FPS">First Person Shooter</genre>
+		<genre genreID = "Stealth">Skradanka</genre>
+		<genre genreID = "RTS">Real Time Strategy </genre>
+		<genre genreID = "Action">Action Game</genre>
+	</genres>
+	<games>
+		<game producerID = "Dice" engineID = "Frostbite" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="FPS">
+			<title>Battlefield 5</title>
+			<description> Enter mankind's greatest conflict with Battlefield 5 as the series goes back to its roots with a never-before-seen portrayal of World War 2. Lead your squad to victory with new ways to turn the battlefield to your advantage. Assemble your Company of customized soldiers, weapons, and vehicles then take them on an epic journey through the Tides of War. Experience the most intense, immersive Battlefield yet. You will never be the same.</description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>15-11-2018</premierDate>
+			<metariticRate>
+				<metascore>81</metascore>
+				<userScore>2.8</userScore>
+				<numberOfVotes>2269</numberOfVotes>
+			</metariticRate>		
+		</game>
+		
+		<game producerID = "CD" engineID = "Frostbite" publisherID = "SE" ratingID = "M" platformID = "Multi" genreID="Action">
+			<title>Shadow of the Tomb Raider</title>
+			<description>Experience Lara Croft's defining moment as she becomes the Tomb Raider. In Shadow of the Tomb Raider, Lara must master a deadly jungle, overcome terrifying tombs, and persevere through her darkest hour. As she races to save the world from a Maya apocalypse, Lara will ultimately be forged into the Tomb Raider she is destined to be. </description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>14-10-2018</premierDate>
+			<metariticRate>
+				<metascore>77</metascore>
+				<userScore>6.9</userScore>
+				<numberOfVotes>460</numberOfVotes>
+			</metariticRate>		
+		</game>
+		
+		<game producerID = "BW" engineID = "EclipseEngine" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>Dragon Age Origins</title>
+			<description>Dragon Age: Origins is a role-playing game developed by BioWare and published by Electronic Arts. ... BioWare described Dragon Age: Origins as a "dark heroic fantasy" set in a unique world, and a spiritual successor to their previous Baldur's Gate and Neverwinter Nights franchises.</description>
+			<premierPrice currency = "PLN">139.90</premierPrice>
+			<premierDate>03-11-2007</premierDate>
+			<metariticRate>
+				<metascore>91</metascore>
+				<userScore>8.7</userScore>
+				<numberOfVotes>3978</numberOfVotes>
+			</metariticRate>		
+		</game>
+		
+		<game producerID = "BW" engineID = "Unreal" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>Mass Effect</title>
+			<description>Mass Effect is a science-fiction action-role-playing third-person-shooter video-game series developed by the Canadian company BioWare and released for the Xbox 360, PlayStation 3, and Microsoft Windows, with the third instalment also released on the Wii U.</description>
+			<premierPrice currency = "PLN">129.90</premierPrice>
+			<premierDate>28-05-2008</premierDate>
+			<metariticRate>
+				<metascore>89</metascore>
+				<userScore>8.6</userScore>
+				<numberOfVotes>2999</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "BW" engineID = "Frostbite" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>Dragon Age: Inkwizycja</title>
+			<description> Select and lead a group of characters into harrowing battles against a myriad of enemies – from earth-shattering High Dragons to demonic forces from the otherworld of the Fade. </description>
+			<premierPrice currency = "PLN">154.90</premierPrice>
+			<premierDate>18-11-2014</premierDate>
+			<metariticRate>
+				<metascore>85</metascore>
+				<userScore>5.9</userScore>
+				<numberOfVotes>4229</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Bethesda" engineID = "CE" publisherID = "BS" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>The Elder Scrolls V: Skyrim</title>
+			<description>The next chapter in the Elder Scrolls saga arrives from the Bethesda Game Studios. Skyrim reimagines the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose. Play any type of character you can imagine, and do whatever you want.</description>
+			<premierPrice currency = "PLN">159.90</premierPrice>
+			<premierDate>11-11-2011</premierDate>
+			<metariticRate>
+				<metascore>94</metascore>
+				<userScore>8.2</userScore>
+				<numberOfVotes>10181</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Ubisoft" engineID = "Anvil" publisherID = "Ubi" ratingID = "M" platformID = "Multi" genreID="Action">
+			<title>Assassin’s Creed Odyssey</title>
+			<description> Write your own epic odyssey and become a legendary Spartan hero. Forge your destiny in a world on the brink of tearing itself apart. Influence how history unfolds in an ever-changing world shaped by your choices.</description>
+			<premierPrice currency = "PLN">249.90</premierPrice>
+			<premierDate>05-09-2018</premierDate>
+			<metariticRate>
+				<metascore>86</metascore>
+				<userScore>5.6</userScore>
+				<numberOfVotes>1097</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Insomniac" engineID = "Anvil" publisherID = "Sony" ratingID = "E" platformID = "PS4" genreID="Action">
+			<title>Ratchet &amp; Clank</title>
+			<description>  Play the game, based on the movie, based on the game. Ratchet &amp; Clank (PS4) is a new game based on elements from the original Ratchet &amp; Clank (PS2). Developed alongside the major motion CG-animated picture coming to theatres in 2016, Ratchet &amp; Clank (PS4) marks the PlayStation 4 debut of PlayStation's greatest heroes.</description>
+			<premierPrice currency = "PLN">149.90</premierPrice>
+			<premierDate>12-04-2016</premierDate>
+			<metariticRate>
+				<metascore>85</metascore>
+				<userScore>8.6</userScore>
+				<numberOfVotes>1647</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "CDP" engineID = "REDengine" publisherID = "CDProjekt" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>The Witcher 2 Assassins of the Kings</title>
+			<description>The Witcher 2 is the sequel to developer CD Projekt's mature-themed fantasy role-playing game based on the works of author Andrzej Sapkowski.</description>
+			<premierPrice currency = "PLN">119.90</premierPrice>
+			<premierDate>17-05-2011</premierDate>
+			<metariticRate>
+				<metascore>88</metascore>
+				<userScore>8.5</userScore>
+				<numberOfVotes>4882</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "CDP" engineID = "REDengine" publisherID = "CDProjekt" ratingID = "M" platformID = "Multi" genreID="RPG">
+			<title>The Witcher 3 The Wild Hunt</title>
+			<description>With the Empire attacking the Kingdoms of the North and the Wild Hunt, a cavalcade of ghastly riders, breathing down your neck, the only way to survive is to fight back. As Geralt of Rivia, a master swordsman and monster hunter, leave none of your enemies standing.</description>
+			<premierPrice currency = "PLN">139.90</premierPrice>
+			<premierDate>19-05-2015</premierDate>
+			<metariticRate>
+				<metascore>93</metascore>
+				<userScore>9.4</userScore>
+				<numberOfVotes>13762</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Activision" engineID = "Frostbite" publisherID = "AB" ratingID = "M" platformID = "Multi" genreID="FPS">
+			<title>Call of Duty: Black Ops</title>
+			<description>Treyarch is developing the next installment in the Call of Duty franchise, rumored to be set during the Cold War.</description>
+			<premierPrice currency = "PLN">139.90</premierPrice>
+			<premierDate>09-11-2010</premierDate>
+			<metariticRate>
+				<metascore>81</metascore>
+				<userScore>5.4</userScore>
+				<numberOfVotes>1781</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Activision" engineID = "Frostbite" publisherID = "AB" ratingID = "M" platformID = "Multi" genreID="FPS">
+			<title>Tom Clancy’s Rainbow Six Siege</title>
+			<description>Clancy’s Rainbow Six Siege is inspired by real world counter-terrorist organizations, and inserts players in the middle of lethal close-quarters engagements. For the first time in a Tom Clancy’s Rainbow Six game, players can choose from a variety of unique Counter Terrorist Operators</description>
+			<premierPrice currency = "PLN">159.90</premierPrice>
+			<premierDate>01-12-2015</premierDate>
+			<metariticRate>
+				<metascore>73</metascore>
+				<userScore>7.4</userScore>
+				<numberOfVotes>730</numberOfVotes>
+			</metariticRate>		
+		</game>
+		<game producerID = "Maxis" engineID = "Unreal" publisherID = "EA" ratingID = "T" platformID = "Multi" genreID="RTS">
+			<title>Spore</title>
+			<description> From the mind of Will Wright comes SPORE, a journey that takes you from the origin and evolution of life through the development of civilization and technology and eventually all the way into the deepest reaches of outer space. </description>
+			<premierPrice currency = "PLN">159.90</premierPrice>
+			<premierDate>05-09-2008</premierDate>
+			<metariticRate>
+				<metascore>84</metascore>
+				<userScore>5.4</userScore>
+				<numberOfVotes>1804</numberOfVotes>
+			</metariticRate>		
+		</game>
+	</games>
+</GamesCatalog>
