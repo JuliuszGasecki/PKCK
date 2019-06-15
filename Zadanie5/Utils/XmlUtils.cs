@@ -15,15 +15,15 @@ namespace Utils
             XmlSerializer selializer = new XmlSerializer(typeof(T));
             using (Stream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                return (T) selializer.Deserialize(fs);
+                return (T)selializer.Deserialize(fs);
             }
         }
 
-        public static string ToXml(object obj, XmlSerializerNamespaces ns)
+        private static string ToXml(object obj, XmlSerializerNamespaces ns)
         {
             Type T = obj.GetType();
 
-            var xs = new XmlSerializer(T);
+            var xs = new XmlSerializer(T, "http://www.foo.com");
             var ws = new XmlWriterSettings { Indent = true, NewLineOnAttributes = NewLineOnAttributes, OmitXmlDeclaration = true };
 
             var sb = new StringBuilder();
@@ -37,11 +37,30 @@ namespace Utils
         /// <summary>
         /// Serializes an object to an XML string.
         /// </summary>
-        public static string ToXml(object obj)
+        public static string XmlToXmlString(object obj)
         {
             var ns = new XmlSerializerNamespaces();
-            ns.Add("", "");
+            ns.Add("", "http://www.foo.com");
             return ToXml(obj, ns);
+        }
+
+        public static void Serialize<T>(T dataToSerialize, string path)
+        {
+            TextWriter writer = null;
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                writer = new StreamWriter(path);
+                serializer.Serialize(writer, dataToSerialize);
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                if (writer != null)
+                    writer.Close();
+            }
         }
 
     }

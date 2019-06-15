@@ -67,7 +67,7 @@ namespace GUI.Model
                 public class SharePriceInfo
                 {
                     [XmlAttribute(AttributeName = "currency")]
-                    public string Currency { get; set; }
+                    public string CurrencyId { get; set; }
                     [XmlText]
                     public string Amount { get; set; }
                 }
@@ -83,7 +83,7 @@ namespace GUI.Model
             public class Engine
             {
                 [XmlAttribute(AttributeName = "engineID")]
-                public string ProducerId { get; set; }
+                public string EngineId { get; set; }
                 [XmlAttribute(AttributeName = "programmingLanguage")]
                 public string ProgrammingLanguage { get; set; }
                 [XmlElement(ElementName = "name")]
@@ -186,10 +186,12 @@ namespace GUI.Model
                 public class PremierPriceInfo
                 {
                     [XmlAttribute(AttributeName = "currency")]
-                    public string Currency { get; set; }
+                    public string CurrencyId { get; set; }
                     [XmlText]
                     public string Amount { get; set; }
                 }
+                [XmlElement(ElementName = "premierDate")]
+                public string PremierDate { get; set; }
                 [XmlElement(ElementName = "metariticRate")]
                 public MetariticRateInfo MetariticRate { get; set; }
                 [XmlRoot(ElementName = "metariticRate")]
@@ -206,7 +208,7 @@ namespace GUI.Model
             }
         }
 
-        [XmlRoot(ElementName  = "GamesCatalog")]
+        [XmlRoot(ElementName  = "GamesCatalog", Namespace = "http://www.foo.com")]
         public class GameCatalogRoot
         {
             [XmlElement(ElementName = "header")]

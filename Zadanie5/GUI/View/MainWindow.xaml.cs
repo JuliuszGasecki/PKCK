@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GUI.Model;
 
 namespace GUI.View
 {
@@ -20,9 +21,23 @@ namespace GUI.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        public GamesCatalogModel.GameCatalogRoot GamesXml { get; set; }
+        public static MainWindow AppWindow;
+        private void GetSelectedItemToUpdate(object sender, MouseButtonEventArgs e)
+        {
+            string item = (string)UpdateBox.SelectedItems[0];
+
+        }
+
+        private void GetSelectedItemToDelete(object sender, MouseButtonEventArgs e)
+        {
+            string item = (string)DeleteBox.SelectedItems[0];
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            AppWindow = this;
             this.Title = "PKCK Zadanie5";
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
