@@ -58,16 +58,29 @@
     <Compile Include="Model\GamesCatalogModel.cs" />
     <Compile Include="Model\Getters.cs" />
     <Compile Include="ViewModel\CreateGameEngineViewModel.cs" />
+    <Compile Include="ViewModel\CreateGameViewModel.cs" />
     <Compile Include="ViewModel\CreateProducerViewModel.cs" />
+    <Compile Include="ViewModel\CreatePublisherViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\CreateGameEngineWindow.xaml.cs">
       <DependentUpon>CreateGameEngineWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CreateGameWindow.xaml.cs">
+      <DependentUpon>CreateGameWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateProducerWindow.xaml.cs">
       <DependentUpon>CreateProducerWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\CreateGameEngineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreateGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreatePublisherWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,6 +91,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\CreatePublisherWindow.xaml.cs">
+      <DependentUpon>CreatePublisherWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

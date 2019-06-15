@@ -33,8 +33,20 @@ namespace GUI.ViewModel
         private string CreateId()
         {
             string output = Name.First().ToString().ToUpper() + Name.Substring(1);
-            output = output.Replace(" ", "");
-            return output;
+            var letters = output.Split(' ');
+            if (letters.Length == 1)
+            {
+                return output;
+            }
+            else
+            {
+                output = "";
+                foreach (var l in letters)
+                {
+                    output += l[0];
+                }
+                return output;
+            }
         }
 
         public string Langauage

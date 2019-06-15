@@ -16,16 +16,15 @@ using GUI.Model;
 namespace GUI.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy CreateGameEngine.xaml
+    /// Logika interakcji dla klasy CreatePublisherWindow.xaml
     /// </summary>
-
-    public partial class CreateGameEngineWindow : Window
+    public partial class CreatePublisherWindow : Window
     {
         public GamesCatalogModel.GameCatalogRoot GamesXml { get; set; }
 
-        public static CreateGameEngineWindow AppWindow;
+        public static CreatePublisherWindow AppWindow;
         public Delegate ReloadMain;
-        public CreateGameEngineWindow(GamesCatalogModel.GameCatalogRoot gamesXml)
+        public CreatePublisherWindow(GamesCatalogModel.GameCatalogRoot gamesXml)
         {
             GamesXml = gamesXml;
             this.Title = "Create Publisher";
@@ -34,6 +33,4 @@ namespace GUI.View
             InitializeComponent();
         }
     }
-
-
 }

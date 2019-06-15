@@ -138,9 +138,6 @@ namespace GUI.ViewModel
                 "Producer",
                 "Game Engine",
                 "Publisher",
-                "Rating",
-                "Platform",
-                "Genre",
                 "Game"
             };
             return data;
@@ -160,18 +157,6 @@ namespace GUI.ViewModel
             foreach (var p in gamesXml.Publishers.Publishers)
             {
                 data.Add("publisher: " + p.PublisherId);
-            }
-            foreach (var r in gamesXml.Ratings.Ratings)
-            {
-                data.Add("rating: " + r.RatingId);
-            }
-            foreach (var p in gamesXml.Platforms.Platforms)
-            {
-                data.Add("platform: " + p.PlatformId);
-            }
-            foreach (var g in gamesXml.Genres.Genres)
-            {
-                data.Add("genre: " + g.GenreId);
             }
             foreach (var g in gamesXml.Games.Games)
             {
@@ -319,6 +304,22 @@ namespace GUI.ViewModel
                     if (_selectedItemDummyC.Equals("Game Engine"))
                     {
                         CreateGameEngineWindow window = new CreateGameEngineWindow(_gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyC.Equals("Publisher"))
+                    {
+                        CreatePublisherWindow window = new CreatePublisherWindow(_gamesXml);
+                        ReloadListEvent += new RefreshMain(Reload);
+                        window.ReloadMain = ReloadListEvent;
+                        window.ShowDialog();
+                    }
+
+                    if (_selectedItemDummyC.Equals("Game"))
+                    {
+                        CreateGameWindow window = new CreateGameWindow(_gamesXml);
                         ReloadListEvent += new RefreshMain(Reload);
                         window.ReloadMain = ReloadListEvent;
                         window.ShowDialog();

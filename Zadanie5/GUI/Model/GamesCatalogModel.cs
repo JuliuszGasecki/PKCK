@@ -15,6 +15,8 @@ namespace GUI.Model
         [XmlRoot(ElementName = "header")]
         public class HeaderRoot
         {
+            [XmlElement(ElementName = "polskieZnakiŹŻ")]
+            public string polishLetters { get; set; }
             [XmlElement(ElementName = "titleOfProject")]
             public string TitleOfProject { get; set; }
             [XmlElement(ElementName = "description")]

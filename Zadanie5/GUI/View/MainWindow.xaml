@@ -19,12 +19,12 @@
         <RadioButton Command="{Binding DisplayMyXml}" IsChecked ="false" Content="My Xml file format" GroupName="XmlFormat" Style="{StaticResource {x:Type ToggleButton}}" HorizontalAlignment="Left" Margin="654,10,0,0" VerticalAlignment="Top" Height="35" Width="180"/>
         <Button Command="{Binding OpenFile}" Content="Load xml file" HorizontalAlignment="Left" Margin="30,23,0,0" VerticalAlignment="Top" Width="118" Height="44"/>
         <Button Command="{Binding SaveToXml}" Content="Save to xml file" HorizontalAlignment="Left" Margin="194,23,0,0" VerticalAlignment="Top" Width="118" Height="44"/>
-        <ListBox Name="CreateBox" ItemsSource="{Binding CatalogGameDataToCreate}" SelectedItem="{Binding GetSelectedItemToCreate}" HorizontalAlignment="Left" Height="146" Margin="30,156,0,0" VerticalAlignment="Top" Width="282"/>
+        <ListBox Name="CreateBox" ItemsSource="{Binding CatalogGameDataToCreate}" SelectedItem="{Binding GetSelectedItemToCreate}" HorizontalAlignment="Left" Height="89" Margin="30,156,0,0" VerticalAlignment="Top" Width="282"/>
         <Label Content="Create:" HorizontalAlignment="Left" Margin="30,126,0,0" VerticalAlignment="Top" Width="282"/>
-        <ListBox Name="DeleteBox" ItemsSource="{Binding CatalogGameData}" SelectedItem="{Binding GetSelectedItemToDelete}" HorizontalAlignment="Left" Height="146" Margin="30,406,0,0" VerticalAlignment="Top" Width="282"/>
-        <Label Content="Delete:" HorizontalAlignment="Left" Margin="30,376,0,0" VerticalAlignment="Top" Width="282"/>
-        <ListBox Name ="UpdateBox" ItemsSource="{Binding CatalogGameData}" SelectedItem="{Binding GetSelectedItemToModify}" HorizontalAlignment="Left" Height="146" Margin="30,701,0,0" VerticalAlignment="Top" Width="282"/>
-        <Label Content="Update:" HorizontalAlignment="Left" Margin="30,671,0,0" VerticalAlignment="Top" Width="282"/>
+        <ListBox Name="DeleteBox" ItemsSource="{Binding CatalogGameData}" SelectedItem="{Binding GetSelectedItemToDelete}" HorizontalAlignment="Left" Height="210" Margin="30,329,0,0" VerticalAlignment="Top" Width="282"/>
+        <Label Content="Delete:" HorizontalAlignment="Left" Margin="30,298,0,0" VerticalAlignment="Top" Width="282"/>
+        <ListBox Name ="UpdateBox" ItemsSource="{Binding CatalogGameData}" SelectedItem="{Binding GetSelectedItemToModify}" HorizontalAlignment="Left" Height="210" Margin="30,658,0,0" VerticalAlignment="Top" Width="282"/>
+        <Label Content="Update:" HorizontalAlignment="Left" Margin="30,628,0,0" VerticalAlignment="Top" Width="282"/>
         <Button Content="Save to format" HorizontalAlignment="Left" Margin="194,82,0,0" VerticalAlignment="Top" Width="118" Height="44"/>
     </Grid>
 </Window>

@@ -26,16 +26,18 @@ namespace GUI.ViewModel
             if (LicenseManager.UsageMode == LicenseUsageMode.Runtime)
             {
                 _currencyList = new ObservableCollection<string>();
-                foreach (var c in CreateProducerWindow.AppWindow.GamesXml.Producers.Producers)
-                    if (!_currencyList.Contains(c.SharePrice.CurrencyId))
-                    {
-                        _currencyList.Add(c.SharePrice.CurrencyId);
-                    }
-
+                _currencyList.Add("USD");
+                _currencyList.Add("EURO");
+                _currencyList.Add("PLN");
                 CurrencyList = _currencyList;
             }
         }
-        public ICommand AddProducer { get { return new RelayCommand(AddProducerFun, CanExecute); } }
+
+        public ICommand AddProducer
+        {
+            get { return new RelayCommand(AddProducerFun, CanExecute); }
+        }
+
         private void AddProducerFun()
         {
             var p = new GamesCatalogModel.ProducerRoot.Producer
@@ -57,9 +59,22 @@ namespace GUI.ViewModel
 
         private string CreateId()
         {
-            string output = string.Concat(CompanyName.Where(c => c >= 'A' && c <= 'Z'));
-            output += FoundationDate;
-            return output;
+            string output = CompanyName.First().ToString().ToUpper() + CompanyName.Substring(1);
+            var letters = output.Split(' ');
+            if (letters.Length == 1)
+            {
+                return output;
+            }
+            else
+            {
+                output = "";
+                foreach (var l in letters)
+                {
+                    output += l[0];
+                }
+
+                return output;
+            }
         }
 
         public string GetSelectedItem
@@ -101,6 +116,7 @@ namespace GUI.ViewModel
                 RaisePropertyChanged("Headquarter");
             }
         }
+
         public string FoundationDate
         {
             get => this._foundationDate;
@@ -122,7 +138,9 @@ namespace GUI.ViewModel
         }
 
         #region others
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         public virtual void RaisePropertyChanged(string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -138,7 +156,6 @@ namespace GUI.ViewModel
         {
             return true;
         }
+        #endregion
     }
-    #endregion
 }
-

@@ -1,0 +1,20 @@
+﻿<Window x:Class="GUI.View.CreatePublisherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI.View"
+        xmlns:viewModel="clr-namespace:GUI.ViewModel"
+        mc:Ignorable="d"
+        Title="CreatePublisherWindow" Height="158.982" Width="460.479"
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <viewModel:CreatePublisherViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Label Content="Publisher Name" HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding AddPublisher}" Content="Ok" HorizontalAlignment="Left" Margin="350,88,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox Text="{Binding PublisherName}" HorizontalAlignment="Left" Height="23" Margin="202,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+
+    </Grid>
+</Window>
