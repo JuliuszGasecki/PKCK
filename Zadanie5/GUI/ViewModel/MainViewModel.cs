@@ -340,10 +340,8 @@ namespace GUI.ViewModel
             {
                 if (_selectedItemDummyD != null)
                 {
-                    CreateProducerWindow window = new CreateProducerWindow(_gamesXml);
-                    ReloadListEvent += new RefreshMain(Reload);
-                    window.ReloadMain = ReloadListEvent;
-                    window.ShowDialog();
+                    DeleteItem.RemoveItemById(_gamesXml, _selectedItemDummyD);
+                    Reload();
                 }
                 return _selectedItemDummyD;
             }
@@ -360,10 +358,6 @@ namespace GUI.ViewModel
             {
                 if (_selectedItemDummyM != null)
                 {
-                    CreateProducerWindow window = new CreateProducerWindow(_gamesXml);
-                    ReloadListEvent += new RefreshMain(Reload);
-                    window.ReloadMain = ReloadListEvent;
-                    window.ShowDialog();
                 }
                 return _selectedItemDummyM;
             }

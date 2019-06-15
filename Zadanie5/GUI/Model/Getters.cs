@@ -12,43 +12,49 @@ namespace Logic
     {
         public static string Producer(ObservableCollection<GamesCatalogModel.ProducerRoot.Producer> producers, string id)
         {
+            string output = "";
             GamesCatalogModel.ProducerRoot.Producer p = producers.FirstOrDefault(x => x.ProducerId == id);
-            string output = p.CompanyName;
+            output = p.CompanyName;
             return output; 
         }
 
         public static string Engine(ObservableCollection<GamesCatalogModel.GameEngineRoot.Engine> engines, string id)
         {
+            string output = "";
             GamesCatalogModel.GameEngineRoot.Engine e = engines.FirstOrDefault(x => x.EngineId == id);
-            string output = e.Name;
+             output = e.Name;
             return output;
         }
 
         public static string Publisher(ObservableCollection<GamesCatalogModel.PublisherRoot.Publisher> publishers, string id)
         {
+            string output = "";
             GamesCatalogModel.PublisherRoot.Publisher p = publishers.FirstOrDefault(x => x.PublisherId == id);
-            string output = p.PublisherName;
+            output = p.PublisherName;
             return output;
         }
 
         public static string Rating(ObservableCollection<GamesCatalogModel.RatingRoot.Rating> ratings, string id)
         {
+            string output = "";
             GamesCatalogModel.RatingRoot.Rating r = ratings.FirstOrDefault(x => x.RatingId == id);
-            string output = r.RatingName;
+            output = r.RatingName;
             return output;
         }
 
         public static string Platform(ObservableCollection<GamesCatalogModel.PlatformRoot.Platform> platforms, string id)
         {
+            string output = "";
             GamesCatalogModel.PlatformRoot.Platform p = platforms.FirstOrDefault(x => x.PlatformId == id);
-            string output = p.PlatformName;
+            output = p.PlatformName;
             return output;
         }
 
         public static string Genre(ObservableCollection<GamesCatalogModel.GenreRoot.Genre> genres, string id)
         {
+            string output = "";
             GamesCatalogModel.GenreRoot.Genre g = genres.FirstOrDefault(x => x.GenreId == id);
-            string output = g.GenreName;
+            output = g.GenreName;
             return output;
         }
     }
