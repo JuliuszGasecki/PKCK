@@ -25,6 +25,6 @@
         <Label Content="Delete:" HorizontalAlignment="Left" Margin="30,298,0,0" VerticalAlignment="Top" Width="282"/>
         <ListBox Name ="UpdateBox" ItemsSource="{Binding CatalogGameData}" SelectedItem="{Binding GetSelectedItemToModify}" HorizontalAlignment="Left" Height="210" Margin="30,658,0,0" VerticalAlignment="Top" Width="282"/>
         <Label Content="Update:" HorizontalAlignment="Left" Margin="30,628,0,0" VerticalAlignment="Top" Width="282"/>
-        <Button Content="Save to format" HorizontalAlignment="Left" Margin="194,82,0,0" VerticalAlignment="Top" Width="118" Height="44"/>
+        <Button Command="{Binding SaveToHtml}" Content="Save to html" HorizontalAlignment="Left" Margin="194,82,0,0" VerticalAlignment="Top" Width="118" Height="44"/>
     </Grid>
 </Window>

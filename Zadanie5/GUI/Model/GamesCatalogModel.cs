@@ -210,7 +210,8 @@ namespace GUI.Model
             }
         }
 
-        [XmlRoot(ElementName  = "GamesCatalog", Namespace = "http://www.foo.com")]
+       // [XmlRoot(ElementName  = "GamesCatalog", Namespace = "http://www.foo.com")]
+        [XmlRoot(ElementName  = "GamesCatalog")]
         public class GameCatalogRoot
         {
             [XmlElement(ElementName = "header")]

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-stylesheet type="text/css" href="style.css"?>
+<?xml-stylesheet type="text/xslt" href="raport.xslt"?>
 
-<GamesCatalog
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://www.foo.com"
-xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
+<GamesCatalog>
 	<header>
 		<polskieZnakiŹŻ/>
 		<titleOfProject>Games Catalog</titleOfProject>
@@ -17,7 +14,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 			</student>
 			<student>
 				<firstName>Bartosz</firstName>
-				<lastName>Stempień</lastName>
+				<lastName>Stempień-Stempień</lastName>
 				<index>210327</index>
 			</student>
 		</authors>
@@ -151,12 +148,12 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 		<platform platformID = "PC">PC</platform>
 		<platform platformID = "PS4">Play Station 4</platform>
 		<platform platformID = "XBOX">XBOX One</platform>
-		<platform platformID = "Multi">Multiplatformowe</platform>
+		<platform platformID = "Multi">Multi platform</platform>
 	</platforms>
 	<genres>
 		<genre genreID = "RPG">Role Playing Game</genre>
 		<genre genreID = "FPS">First Person Shooter</genre>
-		<genre genreID = "Stealth">Skradanka</genre>
+		<genre genreID = "Stealth">Stealth</genre>
 		<genre genreID = "RTS">Real Time Strategy </genre>
 		<genre genreID = "Action">Action Game</genre>
 	</genres>
@@ -171,6 +168,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>2.8</userScore>
 				<numberOfVotes>2269</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/battlefield5.jpg"/>
 		</game>
 		
 		<game producerID = "CD" engineID = "Frostbite" publisherID = "SE" ratingID = "M" platformID = "Multi" genreID="Action">
@@ -183,6 +181,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>6.9</userScore>
 				<numberOfVotes>460</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/tombRider.jpg"/>
 		</game>
 		
 		<game producerID = "BW" engineID = "EclipseEngine" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
@@ -195,6 +194,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>8.7</userScore>
 				<numberOfVotes>3978</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/dao.jpg"/>
 		</game>
 		
 		<game producerID = "BW" engineID = "Unreal" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
@@ -207,6 +207,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>8.6</userScore>
 				<numberOfVotes>2999</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/mass.jpg"/>
 		</game>
 		<game producerID = "BW" engineID = "Frostbite" publisherID = "EA" ratingID = "M" platformID = "Multi" genreID="RPG">
 			<title>Dragon Age: Inkwizycja</title>
@@ -218,9 +219,10 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>5.9</userScore>
 				<numberOfVotes>4229</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/inkw.jpg"/>
 		</game>
 		<game producerID = "Bethesda" engineID = "CE" publisherID = "BS" ratingID = "M" platformID = "Multi" genreID="RPG">
-			<title>The Elder Scrolls V: Skyrim</title>
+			<title>The Elder Scrolls V: Skyrim </title>
 			<description>The next chapter in the Elder Scrolls saga arrives from the Bethesda Game Studios. Skyrim reimagines the open-world fantasy epic, bringing to life a complete virtual world open for you to explore any way you choose. Play any type of character you can imagine, and do whatever you want.</description>
 			<premierPrice currency = "PLN">159.90</premierPrice>
 			<premierDate>11-11-2011</premierDate>
@@ -229,9 +231,10 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>8.2</userScore>
 				<numberOfVotes>10181</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/Skyrim.jpg"/>
 		</game>
 		<game producerID = "Ubisoft" engineID = "Anvil" publisherID = "Ubi" ratingID = "M" platformID = "Multi" genreID="Action">
-			<title>Assassin’s Creed Odyssey</title>
+			<title>Assassin’s Creed Odyssey </title>
 			<description> Write your own epic odyssey and become a legendary Spartan hero. Forge your destiny in a world on the brink of tearing itself apart. Influence how history unfolds in an ever-changing world shaped by your choices.</description>
 			<premierPrice currency = "PLN">249.90</premierPrice>
 			<premierDate>05-09-2018</premierDate>
@@ -240,6 +243,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>5.6</userScore>
 				<numberOfVotes>1097</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/odys.jpg"/>
 		</game>
 		<game producerID = "Insomniac" engineID = "Anvil" publisherID = "Sony" ratingID = "E" platformID = "PS4" genreID="Action">
 			<title>Ratchet &amp; Clank</title>
@@ -251,6 +255,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>8.6</userScore>
 				<numberOfVotes>1647</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/ratch.jpg"/>
 		</game>
 		<game producerID = "CDP" engineID = "REDengine" publisherID = "CDProjekt" ratingID = "M" platformID = "Multi" genreID="RPG">
 			<title>The Witcher 2 Assassins of the Kings</title>
@@ -262,6 +267,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>8.5</userScore>
 				<numberOfVotes>4882</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/w2.jpg"/>
 		</game>
 		<game producerID = "CDP" engineID = "REDengine" publisherID = "CDProjekt" ratingID = "M" platformID = "Multi" genreID="RPG">
 			<title>The Witcher 3 The Wild Hunt</title>
@@ -273,6 +279,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>9.4</userScore>
 				<numberOfVotes>13762</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/w3.jpg"/>
 		</game>
 		<game producerID = "Activision" engineID = "Frostbite" publisherID = "AB" ratingID = "M" platformID = "Multi" genreID="FPS">
 			<title>Call of Duty: Black Ops</title>
@@ -284,6 +291,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>5.4</userScore>
 				<numberOfVotes>1781</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/cod.jpg"/>
 		</game>
 		<game producerID = "Activision" engineID = "Frostbite" publisherID = "AB" ratingID = "M" platformID = "Multi" genreID="FPS">
 			<title>Tom Clancy’s Rainbow Six Siege</title>
@@ -295,6 +303,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>7.4</userScore>
 				<numberOfVotes>730</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/tom.jpg"/>
 		</game>
 		<game producerID = "Maxis" engineID = "Unreal" publisherID = "EA" ratingID = "T" platformID = "Multi" genreID="RTS">
 			<title>Spore</title>
@@ -306,6 +315,7 @@ xsi:schemaLocation="http://www.foo.com zadanie2_schema.xsd">
 				<userScore>5.4</userScore>
 				<numberOfVotes>1804</numberOfVotes>
 			</metariticRate>		
+			<cover src = "covers/spore.jpg"/>
 		</game>
 	</games>
 </GamesCatalog>

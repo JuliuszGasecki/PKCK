@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Xml;
 using System.Xml.Schema;
 using GUI.Model;
@@ -23,6 +24,7 @@ namespace GUI.ViewModel
         private string _xmlDisplayString;
         private string _myOwnXmlString;
         private string _xmlString;
+        private string _xmlPath;
         private string _schemaPath;
         private string _selectedItemDummyC;
         private string _selectedItemDummyM;
@@ -30,11 +32,13 @@ namespace GUI.ViewModel
         private ObservableCollection<string> _catalogGameData;
         private ObservableCollection<string> _catalogGameDataToCreate;
         private GamesCatalogModel.GameCatalogRoot _gamesXml;
+
         public MainViewModel()
         {
-
         }
+
         public delegate void RefreshMain();
+
         public event RefreshMain ReloadListEvent;
 
         public void Reload()
@@ -42,15 +46,65 @@ namespace GUI.ViewModel
             InitializeFields();
         }
 
-#region ICommands
-        public ICommand OpenFile { get { return new RelayCommand(OpenFileFun, CanExecute); } }
-        public ICommand SaveToXml { get { return new RelayCommand(SaveToXmlFun, CanExecute); } }
+        #region ICommands
 
-        public ICommand DisplayXml { get { return new RelayCommand(DisplayXmlFun, CanExecute); } }
-        public ICommand DisplayMyXml { get { return new RelayCommand(DisplayMyXmlFun, CanExecute); } }
+        public ICommand OpenFile
+        {
+            get { return new RelayCommand(OpenFileFun, CanExecute); }
+        }
+
+        public ICommand SaveToXml
+        {
+            get { return new RelayCommand(SaveToXmlFun, CanExecute); }
+        }
+
+        public ICommand DisplayXml
+        {
+            get { return new RelayCommand(DisplayXmlFun, CanExecute); }
+        }
+
+        public ICommand DisplayMyXml
+        {
+            get { return new RelayCommand(DisplayMyXmlFun, CanExecute); }
+        }
+
+        public ICommand SaveToHtml
+        {
+            get { return new RelayCommand(SaveToHtmlFun, CanExecute); }
+        }
+
         #endregion
 
         #region privates
+
+        private void SaveToHtmlFun()
+        {
+            if (_gamesXml != null)
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.Filter = "HTML file|*.html";
+                if (saveFile.ShowDialog() == true)
+                {
+                    string directoryPath = saveFile.FileName;
+                    if (directoryPath != "")
+                    {
+                        XmlUtils.TransformXmlToHtml(_xmlPath, directoryPath);
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("There is nothing to save.", "Error", MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is no xml file which can be converted.", "Error", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
         private void OpenFileFun()
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -64,7 +118,9 @@ namespace GUI.ViewModel
                     if (path.Contains(".xml"))
                     {
                         xmlPath = path;
+                        _xmlPath = path;
                     }
+
                     if (path.Contains(".xsd"))
                     {
                         schemaPath = path;
@@ -72,20 +128,21 @@ namespace GUI.ViewModel
                     }
                 }
             }
-            
+
             if (xmlPath.Contains(".xml") && schemaPath.Contains(".xsd"))
             {
-                if (ValidateSchema(xmlPath, schemaPath))
+                if (XmlUtils.ValidateSchema(xmlPath, schemaPath))
                 {
                     _gamesXml = XmlUtils.Deserialize<GamesCatalogModel.GameCatalogRoot>(xmlPath);
                     InitializeFields();
                 }
             }
 
-            else 
+            else
             {
                 if (xmlPath.Any() || schemaPath.Any())
-                    MessageBox.Show("There is no XML file or XSD file!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("There is no XML file or XSD file!", "Error", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
             }
         }
 
@@ -99,7 +156,7 @@ namespace GUI.ViewModel
                 if (directoryPath != "" && _gamesXml != null)
                 {
                     XmlUtils.Serialize<GamesCatalogModel.GameCatalogRoot>(_gamesXml, directoryPath);
-                    if (!ValidateSchema(directoryPath, _schemaPath))
+                    if (!XmlUtils.ValidateSchema(directoryPath, _schemaPath))
                     {
                         File.Delete(directoryPath);
                     }
@@ -128,7 +185,7 @@ namespace GUI.ViewModel
             DisplayXmlFun();
             CatalogGameDataToCreate = GetGameCatalogToCreate(_gamesXml);
             CatalogGameData = GetGameCatalog(_gamesXml);
-            MainWindow.AppWindow.GamesXml  = _gamesXml;
+            MainWindow.AppWindow.GamesXml = _gamesXml;
         }
 
         private ObservableCollection<string> GetGameCatalogToCreate(GamesCatalogModel.GameCatalogRoot gamesXml)
@@ -150,51 +207,23 @@ namespace GUI.ViewModel
             {
                 data.Add("producer: " + p.ProducerId);
             }
+
             foreach (var g in gamesXml.GameEngines.GameEngines)
             {
                 data.Add("engine: " + g.EngineId);
             }
+
             foreach (var p in gamesXml.Publishers.Publishers)
             {
                 data.Add("publisher: " + p.PublisherId);
             }
+
             foreach (var g in gamesXml.Games.Games)
             {
                 data.Add("game: " + g.Title + " " + g.PremierDate.Substring(g.PremierDate.Length - 4));
             }
+
             return data;
-        }
-
-        private bool ValidateSchema(string xmlPath, string schemaPath)
-        {
-            XmlDocument xml = new XmlDocument();
-            xml.Load(xmlPath);
-
-            XmlTextReader schemaReader = new XmlTextReader(schemaPath);
-            XmlSchema schema = null;;
-            try
-            {
-                schema = XmlSchema.Read(schemaReader, null);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Validation Error");
-                return false;
-            }
-
-            xml.Schemas.Add(schema);
-
-            try
-            {
-                xml.Validate(null);
-            }
-            catch (XmlSchemaValidationException e)
-            {
-                MessageBox.Show(e.Message, "Validation Error");
-                return false;
-            }
-            MessageBox.Show("Validation with xsd is done", "Ok");
-            return true;
         }
 
         private string XmlToMyOwnXml(GamesCatalogModel.GameCatalogRoot gamesXml)
@@ -213,6 +242,7 @@ namespace GUI.ViewModel
                     output += "\t\t\t" + s.FirstName + " " + s.LastName + " " + s.Index + "\n";
                 }
             }
+
             output += "\tModification Date: " + gamesXml.Header.ModificationDate + "\n";
             output += "\tUniversity: " + gamesXml.Header.University + "\n";
 
@@ -263,6 +293,7 @@ namespace GUI.ViewModel
                 output += "\tID: " + g.GenreId + "\n";
                 output += "\tName: " + g.GenreName + "\n";
             }
+
             output += "\n";
             output += "List of all games\n";
             foreach (var g in gamesXml.Games.Games)
@@ -278,11 +309,14 @@ namespace GUI.ViewModel
                 output += "\t\tPremier Price: " + g.PremierPrice.Amount + " " + g.PremierPrice.CurrencyId + "\n";
                 output += "\t\tPremier Date: " + g.PremierDate + "\n";
                 output += "\t\tScores: " + "\n";
-                output += "\t\t\tMetaScore: " + g.MetariticRate.MetaScore + " User Score: " + g.MetariticRate.UserScore + " Votes: " + g.MetariticRate.NumberOfVotes +  "\n";
+                output += "\t\t\tMetaScore: " + g.MetariticRate.MetaScore + " User Score: " +
+                          g.MetariticRate.UserScore + " Votes: " + g.MetariticRate.NumberOfVotes + "\n";
                 output += "\n";
             }
+
             return output;
         }
+
         #endregion
 
         #region properties
@@ -325,6 +359,7 @@ namespace GUI.ViewModel
                         window.ShowDialog();
                     }
                 }
+
                 return _selectedItemDummyC;
             }
             set
@@ -343,6 +378,7 @@ namespace GUI.ViewModel
                     DeleteItem.RemoveItemById(_gamesXml, _selectedItemDummyD);
                     Reload();
                 }
+
                 return _selectedItemDummyD;
             }
             set
@@ -390,6 +426,7 @@ namespace GUI.ViewModel
                         window.ShowDialog();
                     }
                 }
+
                 return _selectedItemDummyM;
             }
             set
@@ -433,7 +470,9 @@ namespace GUI.ViewModel
 
 
         #region others
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         public virtual void RaisePropertyChanged(string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -450,5 +489,6 @@ namespace GUI.ViewModel
             return true;
         }
     }
-#endregion
+
+    #endregion
 }
